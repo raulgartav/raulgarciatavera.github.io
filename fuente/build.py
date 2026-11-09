@@ -12,7 +12,7 @@ BASE_DIR = {"es": "", "en": "en/", "ca": "ca/"}
 PROY_DIR = {"es": "proyectos", "en": "projects", "ca": "projectes"}
 LANG_NAME = {"es": "ES", "en": "EN", "ca": "CA"}
 HTML_LANG = {"es": "es", "en": "en", "ca": "ca"}
-SITE_URL = "https://raulgartav.github.io/"
+SITE_URL = "https://raulgartav.github.io/raulgarciatavera.github.io/"
 
 e = html.escape
 
