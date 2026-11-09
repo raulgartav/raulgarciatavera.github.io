@@ -1,3 +1,11 @@
+/* Tipografías alojadas en la propia web (no dependen de servicios externos) */
+@font-face{font-family:"Archivo";src:url(fuentes/archivo-var.woff2) format("woff2-variations"),url(fuentes/archivo-var.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fuentes/plex-sans-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fuentes/plex-sans-500.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url(fuentes/plex-sans-600.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url(fuentes/plex-mono-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url(fuentes/plex-mono-500.woff2) format("woff2");font-weight:500;font-display:swap}
+
 /* Concepto: lámina de plano técnico — papel milimetrado, cajetín con los datos de cada proyecto
    y referencias numeradas como en un juego de planos. Mismo lenguaje que el CV «Plano técnico». */
 :root{
@@ -193,3 +201,95 @@ h1,h2,h3,h4{font-family:var(--f-disp);text-wrap:balance;margin:0;line-height:1.1
   .tarjeta:last-child:nth-child(odd) .tarjeta-a{flex-direction:row}
   .tarjeta:last-child:nth-child(odd) .portada{width:42%;flex:none;aspect-ratio:auto;min-height:240px;border-bottom:0;border-right:1px solid var(--linea-f)}
 }
+
+/* ───── Revisión 2 ───── */
+.saltar{position:absolute;left:12px;top:-60px;z-index:50;background:var(--tinta);color:var(--hoja);padding:8px 14px;font-weight:600;text-decoration:none}
+.saltar:focus{top:12px}
+.barra{top:0}
+:target{scroll-margin-top:84px}
+.cajetin dd .tags{gap:4px}
+.cajetin dd .tags li{font-size:11px;padding:1px 6px}
+
+/* Índice lateral */
+.indice{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;counter-reset:ind;border-left:1.5px solid var(--linea-f)}
+.indice li{counter-increment:ind}
+.indice a{display:flex;gap:10px;padding:6px 0 6px 14px;margin-left:-1.5px;border-left:1.5px solid transparent;text-decoration:none;color:var(--gris);font-size:14px;line-height:1.35}
+.indice a::before{content:counter(ind,decimal-leading-zero);font-family:var(--f-mono);font-size:11.5px;padding-top:2px;color:var(--linea-f)}
+.indice a:hover{color:var(--tinta)}
+.indice a[aria-current="true"]{color:var(--tinta);border-left-color:var(--azul);font-weight:500}
+.indice a[aria-current="true"]::before{color:var(--azul)}
+.proy-txt{max-width:none}
+.psec{display:flex;flex-direction:column;gap:18px}
+.psec>p,.psec>ul{max-width:68ch}
+.psec h2{margin-bottom:0}
+.guiones{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+
+/* Figuras dentro del texto */
+.fila-figs{display:flex;gap:14px;align-items:flex-start;width:100%}
+.fig{margin:0;min-width:0;background:var(--hoja);border:1px solid var(--linea-f)}
+.fig a{display:block;cursor:zoom-in;background:#fff}
+.fig img{width:100%;height:auto}
+.fig video{display:block;width:100%;height:auto;background:#000}
+.fig figcaption{font-size:13.5px;color:var(--gris);padding:9px 12px;line-height:1.45;border-top:1px solid var(--linea)}
+@media (max-width:620px){.fila-figs{flex-direction:column}.fila-figs .fig{flex:none!important;width:100%}}
+
+/* Gráfico de barras */
+.barras{margin:0;border:1.5px solid var(--tinta);background:var(--hoja);padding:16px 18px 18px;max-width:68ch;position:relative}
+.barras figcaption{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--gris);margin-bottom:12px}
+.barras dl{margin:0;display:flex;flex-direction:column;gap:8px}
+.bar{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr);gap:12px;align-items:center}
+.bar-sep{margin-top:8px;padding-top:12px;border-top:1px dashed var(--linea-f)}
+.bar dt{font-size:13.5px;color:var(--tinta)}
+.bar dd{margin:0;display:flex;align-items:center;gap:10px;min-width:0}
+.bar-pista{flex:1;height:14px;background:var(--azul-s);position:relative;min-width:0}
+.bar-v{position:absolute;inset:0 auto 0 0;background:var(--linea-f)}
+.bar-b .bar-v{background:var(--azul)}
+.bar-n{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;min-width:64px;text-align:right}
+.bar-b .bar-n{color:var(--azul);font-weight:500}
+.con-limite dl{position:relative}
+.bar-lim{position:absolute;top:44px;bottom:16px;left:calc(18px + min(190px,30%) + 12px);right:calc(18px + 74px);pointer-events:none}
+.bar-lim::before{content:"";position:absolute;left:var(--lim);top:0;bottom:0;border-left:1.5px dashed #c2410c}
+.bar-lim span{position:absolute;left:var(--lim);bottom:-18px;transform:translateX(-50%);font-family:var(--f-mono);font-size:11px;color:#c2410c;white-space:nowrap}
+.con-limite{padding-bottom:30px}
+@media (max-width:620px){.bar{grid-template-columns:1fr}.bar-lim{display:none}.con-limite{padding-bottom:18px}}
+
+/* Cruz de Malta */
+.ginebra{margin:0;border:1.5px solid var(--tinta);background:var(--hoja)}
+.gin-lamina{background-color:var(--hoja);background-image:linear-gradient(var(--malla) 1px,transparent 1px),linear-gradient(90deg,var(--malla) 1px,transparent 1px);background-size:16px 16px;padding:10px}
+.ginebra svg{display:block;width:100%;max-width:640px;margin:0 auto;height:auto}
+.gin-eje{stroke:var(--linea-f);stroke-width:.5;stroke-dasharray:6 2 1 2}
+.gin-tray{fill:none;stroke:var(--azul);stroke-width:.5;stroke-dasharray:2 2;opacity:.6}
+.gin-cruz path{fill:var(--azul-s);stroke:var(--azul);stroke-width:1.1;stroke-linejoin:round}
+.gin-m{fill:var(--hoja);stroke:var(--azul);stroke-width:.8}
+.gin-m1{fill:var(--azul)}
+.gin-disco{fill:var(--papel);stroke:var(--tinta);stroke-width:1.1}
+.gin-brazo{stroke:var(--tinta);stroke-width:5;stroke-linecap:round}
+.gin-pivote{fill:#c2410c;stroke:var(--tinta);stroke-width:.8}
+.gin-arbol{fill:var(--hoja);stroke:var(--tinta);stroke-width:1}
+.gin-rot{font-family:var(--f-mono);font-size:7px;letter-spacing:.06em;text-transform:uppercase;fill:var(--gris)}
+.gin-panel{display:flex;align-items:center;gap:14px;padding:10px 14px;border-top:1px solid var(--linea-f);flex-wrap:wrap}
+.gin-estado{font-family:var(--f-mono);font-size:12px;min-width:16ch;color:var(--tinta)}
+.ginebra.bloqueada .gin-estado{color:var(--azul)}
+.gin-ciclo{flex:1;min-width:140px;height:8px;background:var(--azul-s);position:relative}
+.gin-tramo{position:absolute;left:37.5%;width:25%;top:0;bottom:0;background:#c2410c;opacity:.75}
+.gin-cursor{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--tinta);left:50%}
+.gin-btn{font:inherit;font-size:12.5px;font-weight:600;background:var(--hoja);color:var(--tinta);border:1.5px solid var(--tinta);padding:4px 12px;cursor:pointer}
+.gin-btn:focus-visible{outline:2px solid var(--azul);outline-offset:2px}
+.ginebra figcaption{font-size:13.5px;color:var(--gris);padding:10px 14px;border-top:1px solid var(--linea);line-height:1.5}
+
+/* Visor de imágenes */
+.visor{position:fixed;inset:0;z-index:100;background:rgba(8,12,22,.92);display:grid;grid-template-rows:auto 1fr auto;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+.visor[hidden]{display:none}
+.visor-barra{display:flex;justify-content:space-between;align-items:center;color:#e3e8f3;font-family:var(--f-mono);font-size:12.5px;gap:12px}
+.visor button{font:inherit;font-size:13px;font-weight:600;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6);padding:6px 12px;cursor:pointer}
+.visor button:focus-visible{outline:2px solid #8aa6ff;outline-offset:2px}
+.visor-img{display:grid;place-items:center;min-height:0;padding:12px 0}
+.visor-img img{max-width:100%;max-height:100%;object-fit:contain;background:#fff}
+.visor-pie{color:#cfd6e4;font-size:14px;text-align:center;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
+body.visor-abierto{overflow:hidden}
+
+/* 404 */
+.e404{padding-block:80px}
+.e404 h1{font-size:clamp(80px,14vw,160px);font-weight:800;font-stretch:75%;color:transparent;-webkit-text-stroke:2px var(--azul);margin:8px 0 24px}
+.e404 p{max-width:62ch}
+@media (prefers-reduced-motion:reduce){.gin-cursor{display:none}}

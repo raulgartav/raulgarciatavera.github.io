@@ -129,7 +129,7 @@ PROYECTOS = [
                "ca": "A l'assaig destructiu, la versió final va aguantar 177 N, gairebé el doble del previst, amb un comportament elàstic i fràgil fins al trencament. El model lineal va resultar conservador per tres motius: prediu la fallada amb la tensió pic d'un sol node, no recull la redistribució local de tensions del PMMA i el punt de contacte real era diferent del simulat. El coeficient de seguretat real va ser de 3,3, fora del rang demanat. La lliçó és que un model d'elements finits s'ha de contrastar amb assaigs i ajustar bé les condicions de contorn."}},
     ],
     "galeria": [
-        {"img": "img/abridor-fem/diseno-final.jpg", "pie": {"es": "Diseño final en SOLIDWORKS.", "en": "Final design in SOLIDWORKS.", "ca": "Disseny final en SOLIDWORKS."}},
+        {"img": "img/abridor-fem/diseno-final.jpg", "pie": {"es": "Versión final: brazo más corto, 10,0 g.", "en": "Final version: shorter arm, 10.0 g.", "ca": "Versió final: braç més curt, 10,0 g."}},
         {"img": "img/abridor-fem/fem-traccion.jpg", "pie": {"es": "Tensiones principales de tracción del diseño final en ANSYS.", "en": "Principal tensile stresses of the final design in ANSYS.", "ca": "Tensions principals de tracció del disseny final en ANSYS."}},
         {"img": "img/abridor-fem/fem-compresion-detalle.jpg", "pie": {"es": "Detalle de la zona crítica a compresión, con la malla refinada.", "en": "Close-up of the critical compression zone with refined mesh.", "ca": "Detall de la zona crítica a compressió, amb la malla refinada."}},
         {"img": "img/abridor-fem/optimizacion-1.jpg", "pie": {"es": "Versión 1: dos vaciados, 15,5 g.", "en": "Version 1: two cut-outs, 15.5 g.", "ca": "Versió 1: dos buidats, 15,5 g."}},
@@ -257,3 +257,79 @@ PROYECTOS = [
     "galeria": [],
 },
 ]
+
+
+# ───────────────────────────── Maquetación
+# Qué figuras, gráficos y animaciones acompañan a cada sección (por índice de sección).
+# "filas": filas de figuras (claves = nombre del archivo sin extensión). Las no usadas quedan en la galería final.
+
+MASA = {
+    "titulo": {"es": "Masa en cada versión", "en": "Mass of each version", "ca": "Massa a cada versió"},
+    "unidad": "g", "dec": 1, "max": 21.47,
+    "barras": [
+        {"l": {"es": "Inicial", "en": "Initial", "ca": "Inicial"}, "v": 21.47},
+        {"l": {"es": "Versión 1", "en": "Version 1", "ca": "Versió 1"}, "v": 15.52},
+        {"l": {"es": "Versión 2", "en": "Version 2", "ca": "Versió 2"}, "v": 14.45},
+        {"l": {"es": "Final", "en": "Final", "ca": "Final"}, "v": 10.04, "serie": "b"},
+    ],
+}
+CARGA = {
+    "titulo": {"es": "Carga de rotura: modelo frente a ensayo", "en": "Failure load: model vs test", "ca": "Càrrega de trencament: model davant d'assaig"},
+    "unidad": "N", "dec": 0, "max": 177,
+    "barras": [
+        {"l": {"es": "Versión 2 · modelo", "en": "Version 2 · model", "ca": "Versió 2 · model"}, "v": 65.77},
+        {"l": {"es": "Versión 2 · ensayo", "en": "Version 2 · test", "ca": "Versió 2 · assaig"}, "v": 82, "serie": "b"},
+        {"l": {"es": "Final · modelo", "en": "Final · model", "ca": "Final · model"}, "v": 90.81, "sep": True},
+        {"l": {"es": "Final · ensayo", "en": "Final · test", "ca": "Final · assaig"}, "v": 177, "serie": "b"},
+    ],
+}
+FLECHA = {
+    "titulo": {"es": "Flecha en el punto de carga", "en": "Deflection at the load point", "ca": "Fletxa al punt de càrrega"},
+    "unidad": "mm", "dec": 1, "max": 16,
+    "limite": {"v": 15, "l": {"es": "Límite: 15 mm", "en": "Limit: 15 mm", "ca": "Límit: 15 mm"}},
+    "barras": [
+        {"l": {"es": "Cálculo (Castigliano)", "en": "Hand calculation (Castigliano)", "ca": "Càlcul (Castigliano)"}, "v": 13.84},
+        {"l": {"es": "Simulación (FEM)", "en": "Simulation (FEM)", "ca": "Simulació (FEM)"}, "v": 11.32, "serie": "b"},
+    ],
+}
+
+MAQUETA = {
+    "clasificador-color": {
+        0: {"anim": "ginebra"},
+        1: {"filas": [["funcionamiento"]]},
+        2: {"filas": [["ensamblaje-cad"], ["simulacion-solidworks"]]},
+        3: {"filas": [["diagrama-flujo"]]},
+    },
+    "abridor-fem": {
+        2: {"filas": [["fem-traccion", "fem-compresion-detalle"]]},
+        3: {"filas": [["diseno-inicial", "optimizacion-1"], ["optimizacion-2", "diseno-final"]], "barras": MASA,
+            "filas2": [["ensayo-82N", "plano"]]},
+        4: {"filas": [["ensayo-fuerza-desplazamiento"]], "barras": CARGA},
+    },
+    "viga-impresa": {
+        0: {"filas": [["esquema"]]},
+        1: {"filas": [["seccion"]]},
+        2: {"filas": [["impresion"]]},
+        3: {"filas": [["primer-prototipo-roto"], ["orientacion-incorrecta", "orientacion-correcta"]]},
+        4: {"filas": [["fem-tensiones", "fem-desplazamientos"]], "barras": FLECHA},
+    },
+}
+DESCARTAR = {"clasificador-color": ["pantalla-lcd"]}   # redundante con la portada y el vídeo
+
+def _clave(g):
+    import os
+    return os.path.splitext(os.path.basename(g.get("video") or g["img"]))[0]
+
+for _p in PROYECTOS:
+    _lib = {_clave(g): g for g in _p["galeria"]}
+    _usadas = set(DESCARTAR.get(_p["slug"], []))
+    for _i, _m in MAQUETA.get(_p["slug"], {}).items():
+        _s = _p["secciones"][_i]
+        for _k in ("filas", "filas2"):
+            if _k in _m:
+                _s[_k] = [[_lib[c] for c in fila] for fila in _m[_k]]
+                _usadas.update(c for fila in _m[_k] for c in fila)
+        for _k in ("barras", "anim"):
+            if _k in _m:
+                _s[_k] = _m[_k]
+    _p["galeria"] = [g for g in _p["galeria"] if _clave(g) not in _usadas]

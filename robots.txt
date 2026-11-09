@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://raulgartav.github.io/raulgarciatavera.github.io/sitemap.xml
