@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Automated colour-sorting machine · Raúl García Tavera</title>
-<meta name="description" content="A machine that detects the colour of each part with a sensor and sorts it accordingly. It brings mechanics, electronics and programming together in one system. I coordinated the team throughout the project.">
-<meta property="og:title" content="Automated colour-sorting machine · Raúl García Tavera">
-<meta property="og:description" content="A machine that detects the colour of each part with a sensor and sorts it accordingly. It brings mechanics, electronics and programming together in one system. I coordinated the team throughout the project.">
+<title>Automatic colour sorter with a Geneva drive · Raúl García Tavera</title>
+<meta name="description" content="A machine that sorts parts by colour. A conveyor feeds them onto a platform that turns in exact 90° steps thanks to a Geneva drive. At each stop a sensor reads the colour and three servos push each part into its bin.">
+<meta property="og:title" content="Automatic colour sorter with a Geneva drive · Raúl García Tavera">
+<meta property="og:description" content="A machine that sorts parts by colour. A conveyor feeds them onto a platform that turns in exact 90° steps thanks to a Geneva drive. At each stop a sensor reads the colour and three servos push each part into its bin.">
 <meta property="og:type" content="website">
 <link rel="alternate" hreflang="es" href="https://raulgartav.github.io/proyectos/clasificador-color.html">
 <link rel="alternate" hreflang="en" href="https://raulgartav.github.io/en/projects/clasificador-color.html">
@@ -33,26 +33,27 @@
   <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> All projects</a>
   <header class="proy-cab">
     <div class="proy-tit">
-      <p class="eyebrow">REF. 01 · Academic team project</p>
-      <h1>Automated colour-sorting machine</h1>
-      <p class="lema">A machine that detects the colour of each part with a sensor and sorts it accordingly. It brings mechanics, electronics and programming together in one system. I coordinated the team throughout the project.</p>
+      <p class="eyebrow">REF. 01 · Project II · ETSEIB · team of 4</p>
+      <h1>Automatic colour sorter with a Geneva drive</h1>
+      <p class="lema">A machine that sorts parts by colour. A conveyor feeds them onto a platform that turns in exact 90° steps thanks to a Geneva drive. At each stop a sensor reads the colour and three servos push each part into its bin.</p>
     </div>
     <dl class="cajetin">
       <div><dt>Period</dt><dd>01/2026 – 05/2026</dd></div>
-      <div><dt>Type</dt><dd>Academic team project</dd></div>
+      <div><dt>Type</dt><dd>Project II · ETSEIB · team of 4</dd></div>
       <div><dt>My role</dt><dd>Team coordinator</dd></div>
       <div><dt>Status</dt><dd><span class="estado estado-acabado">Completed</span></dd></div>
     </dl>
   </header>
-  <div class="portada portada-g" aria-hidden="true"><span class="portada-ref">01</span><span class="portada-cota"></span><span class="portada-caj"><b>REF. 01</b><i>Arduino (C++)</i></span></div>
+  <div class="portada portada-g con-foto"><img src="../../img/clasificador-color/maquina-funcionando.jpg" alt="Automatic colour sorter with a Geneva drive"></div>
+  <dl class="cifras"><div><dt>4 × 90°</dt><dd>Geneva drive stations</dd></div><div><dt>3</dt><dd>colours sorted</dd></div><div><dt>0,2 mm</dt><dd>pin–slot clearance</dd></div><div><dt>5</dt><dd>coordinated motors</dd></div></dl>
   <div class="proy-cuerpo">
-    <aside class="proy-lat"><h2 class="mini">Tools</h2><ul class="tags"><li>Arduino (C++)</li><li>SOLIDWORKS</li><li>3D printing</li><li>Stepper motors</li></ul></aside>
-    <div class="proy-txt"><section class="psec"><h2>The challenge</h2><p>Design and build an automatic system that recognises parts of different colours and separates them without manual intervention, integrating sensors, actuators and custom mechanisms.</p></section><section class="psec"><h2>What we did</h2><ul><li>Colour reading of each part with colour sensors.</li><li>Control program on Arduino, written in C++.</li><li>Actuation with stepper and DC motors.</li><li>Mechanisms designed in SOLIDWORKS and 3D-printed.</li></ul></section><section class="psec"><h2>My role</h2><p>I coordinated the team: I organised the work among the members and made sure the mechanical design, the electronics and the program came together as one machine.</p></section></div>
+    <aside class="proy-lat"><h2 class="mini">Tools</h2><ul class="tags"><li>SOLIDWORKS</li><li>Arduino (C++)</li><li>3D printing</li><li>Mechanisms</li></ul></aside>
+    <div class="proy-txt"><section class="psec"><h2>The challenge</h2><p>Coordinating a continuous feed (the conveyor) with a colour reading that needs the part to stand still, followed by physical sorting. The answer was a classic mechanism: a Geneva drive turns the motor&#x27;s continuous rotation into intermittent 90° steps, and during each pause the platform is mechanically locked.</p></section><section class="psec"><h2>How it works</h2><ul><li>A conveyor driven by a geared DC motor, with LEGO parts, drops each part at the reading station.</li><li>A TCS3200 sensor reads the colour inside an opaque housing that shields it from ambient light.</li><li>A stepper motor (A3967 driver) turns the drive wheel. Each turn rotates the platform 90° and keeps it locked for the remaining 270°.</li><li>The Arduino tracks the colour of the part at each station and fires the HS-422 servo at the matching one.</li><li>An LCD shows the detected colour and a count per colour. There is a start/stop button and an emergency stop.</li></ul></section><section class="psec"><h2>Design and manufacturing</h2><p>All custom parts were modelled parametrically in SOLIDWORKS following design-for-manufacturing criteria and printed in PLA. A 0.2 mm clearance between the pin and the Geneva slots gives a smooth engagement. Before printing, we checked the assembly with interference detection and a motion study so the servo arms would not hit the sensor mount.</p></section><section class="psec"><h2>Control</h2><p>The C++ program synchronises three things: the sensor reading, the platform rotation and the servo actuation. To keep any task from blocking the others, the stepper is timed with millis() instead of fixed delays. The sensor is calibrated with reference parts of each colour before use.</p></section><section class="psec"><h2>My role</h2><p>I coordinated the four-person team throughout the project, from the proposal to the final prototype and poster.</p></section></div>
   </div>
-  
-  <a class="siguiente" href="brazo-robotico.html">
+  <section class="galeria"><h2 class="sec-t">Images</h2><div class="gal"><figure class="ancha video"><video controls preload="none" playsinline poster="../../img/clasificador-color/maquina-funcionando.jpg"><source src="../../img/clasificador-color/funcionamiento.mp4" type="video/mp4"></video><figcaption>The prototype sorting parts in the lab.</figcaption></figure><figure><a href="../../img/clasificador-color/ensamblaje-cad.jpg"><img src="../../img/clasificador-color/ensamblaje-cad.jpg" alt="Full SOLIDWORKS assembly: conveyor, Geneva drive, platform, servos and bins." loading="lazy"></a><figcaption>Full SOLIDWORKS assembly: conveyor, Geneva drive, platform, servos and bins.</figcaption></figure><figure class="ancha video"><video controls preload="none" playsinline poster="../../img/clasificador-color/simulacion-solidworks.jpg"><source src="../../img/clasificador-color/simulacion-solidworks.mp4" type="video/mp4"></video><figcaption>SOLIDWORKS motion study used to check the timing.</figcaption></figure><figure><a href="../../img/clasificador-color/pantalla-lcd.jpg"><img src="../../img/clasificador-color/pantalla-lcd.jpg" alt="The display shows the status and the count per colour." loading="lazy"></a><figcaption>The display shows the status and the count per colour.</figcaption></figure><figure class="ancha"><a href="../../img/clasificador-color/diagrama-flujo.jpg"><img src="../../img/clasificador-color/diagrama-flujo.jpg" alt="Flowchart of the control program." loading="lazy"></a><figcaption>Flowchart of the control program.</figcaption></figure></div></section>
+  <a class="siguiente" href="abridor-fem.html">
     <span class="mini">Next project</span>
-    <span class="sig-t">5-DOF robotic arm <span aria-hidden="true">→</span></span>
+    <span class="sig-t">Bottle opener optimised with finite elements <span aria-hidden="true">→</span></span>
   </a>
 </main>
 <footer class="pie">

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clasificador automatizado de piezas por color · Raúl García Tavera</title>
-<meta name="description" content="Máquina que detecta el color de cada pieza con un sensor y la clasifica según ese color. Junta mecánica, electrónica y programación en un mismo sistema. Coordiné al equipo durante todo el proyecto.">
-<meta property="og:title" content="Clasificador automatizado de piezas por color · Raúl García Tavera">
-<meta property="og:description" content="Máquina que detecta el color de cada pieza con un sensor y la clasifica según ese color. Junta mecánica, electrónica y programación en un mismo sistema. Coordiné al equipo durante todo el proyecto.">
+<title>Clasificador automático por colores con Cruz de Malta · Raúl García Tavera</title>
+<meta name="description" content="Máquina que clasifica piezas por colores. Una cinta las lleva a una plataforma que gira a pasos exactos de 90° gracias a una Cruz de Malta. En cada parada, un sensor lee el color y tres servomotores empujan cada pieza a su caja.">
+<meta property="og:title" content="Clasificador automático por colores con Cruz de Malta · Raúl García Tavera">
+<meta property="og:description" content="Máquina que clasifica piezas por colores. Una cinta las lleva a una plataforma que gira a pasos exactos de 90° gracias a una Cruz de Malta. En cada parada, un sensor lee el color y tres servomotores empujan cada pieza a su caja.">
 <meta property="og:type" content="website">
 <link rel="alternate" hreflang="es" href="https://raulgartav.github.io/proyectos/clasificador-color.html">
 <link rel="alternate" hreflang="en" href="https://raulgartav.github.io/en/projects/clasificador-color.html">
@@ -33,26 +33,27 @@
   <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> Todos los proyectos</a>
   <header class="proy-cab">
     <div class="proy-tit">
-      <p class="eyebrow">REF. 01 · Proyecto académico en equipo</p>
-      <h1>Clasificador automatizado de piezas por color</h1>
-      <p class="lema">Máquina que detecta el color de cada pieza con un sensor y la clasifica según ese color. Junta mecánica, electrónica y programación en un mismo sistema. Coordiné al equipo durante todo el proyecto.</p>
+      <p class="eyebrow">REF. 01 · Proyecto II · ETSEIB · equipo de 4</p>
+      <h1>Clasificador automático por colores con Cruz de Malta</h1>
+      <p class="lema">Máquina que clasifica piezas por colores. Una cinta las lleva a una plataforma que gira a pasos exactos de 90° gracias a una Cruz de Malta. En cada parada, un sensor lee el color y tres servomotores empujan cada pieza a su caja.</p>
     </div>
     <dl class="cajetin">
       <div><dt>Periodo</dt><dd>01/2026 – 05/2026</dd></div>
-      <div><dt>Tipo</dt><dd>Proyecto académico en equipo</dd></div>
+      <div><dt>Tipo</dt><dd>Proyecto II · ETSEIB · equipo de 4</dd></div>
       <div><dt>Mi papel</dt><dd>Coordinador del equipo</dd></div>
       <div><dt>Estado</dt><dd><span class="estado estado-acabado">Terminado</span></dd></div>
     </dl>
   </header>
-  <div class="portada portada-g" aria-hidden="true"><span class="portada-ref">01</span><span class="portada-cota"></span><span class="portada-caj"><b>REF. 01</b><i>Arduino (C++)</i></span></div>
+  <div class="portada portada-g con-foto"><img src="../img/clasificador-color/maquina-funcionando.jpg" alt="Clasificador automático por colores con Cruz de Malta"></div>
+  <dl class="cifras"><div><dt>4 × 90°</dt><dd>estaciones de la Cruz de Malta</dd></div><div><dt>3</dt><dd>colores clasificados</dd></div><div><dt>0,2 mm</dt><dd>holgura pivote–ranura</dd></div><div><dt>5</dt><dd>motores coordinados</dd></div></dl>
   <div class="proy-cuerpo">
-    <aside class="proy-lat"><h2 class="mini">Herramientas</h2><ul class="tags"><li>Arduino (C++)</li><li>SOLIDWORKS</li><li>Impresión 3D</li><li>Motores paso a paso</li></ul></aside>
-    <div class="proy-txt"><section class="psec"><h2>El reto</h2><p>Diseñar y construir un sistema automático que reconozca piezas de distintos colores y las separe sin intervención manual, integrando sensores, actuadores y mecanismos propios.</p></section><section class="psec"><h2>Qué hicimos</h2><ul><li>Lectura del color de cada pieza con sensores de color.</li><li>Programa de control en Arduino, escrito en C++.</li><li>Accionamiento con motores paso a paso y de corriente continua.</li><li>Mecanismos diseñados en SOLIDWORKS y fabricados con impresión 3D.</li></ul></section><section class="psec"><h2>Mi papel</h2><p>Coordiné al equipo: organicé el trabajo entre los miembros y me encargué de que la parte mecánica, la electrónica y el programa encajaran en una sola máquina.</p></section></div>
+    <aside class="proy-lat"><h2 class="mini">Herramientas</h2><ul class="tags"><li>SOLIDWORKS</li><li>Arduino (C++)</li><li>Impresión 3D</li><li>Mecanismos</li></ul></aside>
+    <div class="proy-txt"><section class="psec"><h2>El reto</h2><p>Coordinar una alimentación continua (la cinta) con una lectura de color que necesita la pieza quieta y con una clasificación física posterior. La solución fue un mecanismo clásico: la Cruz de Malta convierte el giro continuo del motor en avances intermitentes de 90°, y durante cada pausa la plataforma queda bloqueada mecánicamente.</p></section><section class="psec"><h2>Cómo funciona</h2><ul><li>Una cinta transportadora, con un motor de corriente continua con reductora y piezas LEGO, deja cada pieza en la estación de lectura.</li><li>El sensor TCS3200 lee el color dentro de una carcasa opaca que lo aísla de la luz ambiente.</li><li>Un motor paso a paso (driver A3967) mueve la rueda motriz. Cada vuelta hace girar la plataforma 90°, y durante los 270° restantes la mantiene bloqueada.</li><li>El Arduino guarda el color de la pieza que hay en cada estación y activa el servo HS-422 de la estación que le corresponde.</li><li>Una pantalla LCD muestra el color detectado y el recuento por colores. Hay un pulsador de marcha/paro y una parada de emergencia.</li></ul></section><section class="psec"><h2>Diseño y fabricación</h2><p>Todas las piezas propias se modelaron de forma paramétrica en SOLIDWORKS con criterios de diseño para fabricación y se imprimieron en PLA. Entre el pivote y las ranuras de la cruz se dejó una holgura de 0,2 mm para que el encaje fuera suave. Antes de imprimir, comprobamos el ensamblaje con detección de interferencias y un estudio de movimiento, para que los brazos de los servos no chocaran con el soporte del sensor.</p></section><section class="psec"><h2>Control</h2><p>El programa en C++ sincroniza tres cosas: la lectura del sensor, el giro de la plataforma y el disparo de los servos. Para que ninguna tarea bloquee a las demás, el avance del motor paso a paso se temporiza con millis() en lugar de pausas fijas. Antes de cada uso se calibra el sensor con piezas de referencia de cada color.</p></section><section class="psec"><h2>Mi papel</h2><p>Coordiné al equipo de cuatro personas durante todo el proyecto, desde la propuesta hasta el prototipo final y el póster.</p></section></div>
   </div>
-  
-  <a class="siguiente" href="brazo-robotico.html">
+  <section class="galeria"><h2 class="sec-t">Imágenes</h2><div class="gal"><figure class="ancha video"><video controls preload="none" playsinline poster="../img/clasificador-color/maquina-funcionando.jpg"><source src="../img/clasificador-color/funcionamiento.mp4" type="video/mp4"></video><figcaption>El prototipo clasificando piezas en el laboratorio.</figcaption></figure><figure><a href="../img/clasificador-color/ensamblaje-cad.jpg"><img src="../img/clasificador-color/ensamblaje-cad.jpg" alt="Ensamblaje general en SOLIDWORKS: cinta, Cruz de Malta, plataforma, servos y cajas." loading="lazy"></a><figcaption>Ensamblaje general en SOLIDWORKS: cinta, Cruz de Malta, plataforma, servos y cajas.</figcaption></figure><figure class="ancha video"><video controls preload="none" playsinline poster="../img/clasificador-color/simulacion-solidworks.jpg"><source src="../img/clasificador-color/simulacion-solidworks.mp4" type="video/mp4"></video><figcaption>Estudio de movimiento en SOLIDWORKS para comprobar la sincronización.</figcaption></figure><figure><a href="../img/clasificador-color/pantalla-lcd.jpg"><img src="../img/clasificador-color/pantalla-lcd.jpg" alt="La pantalla muestra el estado y el recuento por colores." loading="lazy"></a><figcaption>La pantalla muestra el estado y el recuento por colores.</figcaption></figure><figure class="ancha"><a href="../img/clasificador-color/diagrama-flujo.jpg"><img src="../img/clasificador-color/diagrama-flujo.jpg" alt="Diagrama de flujo del programa de control." loading="lazy"></a><figcaption>Diagrama de flujo del programa de control.</figcaption></figure></div></section>
+  <a class="siguiente" href="abridor-fem.html">
     <span class="mini">Siguiente proyecto</span>
-    <span class="sig-t">Brazo robótico de 5 grados de libertad <span aria-hidden="true">→</span></span>
+    <span class="sig-t">Abridor de botellas optimizado con elementos finitos <span aria-hidden="true">→</span></span>
   </a>
 </main>
 <footer class="pie">

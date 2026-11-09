@@ -91,13 +91,29 @@ def chip_estado(p, l):
     return f'<span class="estado estado-{p["estado"]}">{e(T[p["estado"]][l])}</span>'
 
 def portada(p, l, desde, clase="portada"):
-    if p["galeria"]:
-        g = p["galeria"][0]
-        return (f'<div class="{clase} con-foto"><img src="{rel(desde, g["archivo"])}" '
-                f'alt="{e(tx(g["pie"], l))}" loading="lazy"></div>')
+    if p.get("portada"):
+        return (f'<div class="{clase} con-foto"><img src="{rel(desde, p["portada"])}" '
+                f'alt="{e(tx(p["titulo"], l))}"{" loading=\"lazy\"" if clase == "portada" else ""}></div>')
     return (f'<div class="{clase}" aria-hidden="true"><span class="portada-ref">{p["num"]}</span>'
             f'<span class="portada-cota"></span>'
             f'<span class="portada-caj"><b>REF. {p["num"]}</b><i>{e(tx(p["etiquetas"][0], l))}</i></span></div>')
+
+def cifras(p, l):
+    if not p.get("cifras"):
+        return ""
+    items = "".join(f'<div><dt>{e(c["v"])}</dt><dd>{e(tx(c["l"], l))}</dd></div>' for c in p["cifras"])
+    return f'<dl class="cifras">{items}</dl>'
+
+def figura(g, l, ruta):
+    pie = e(tx(g["pie"], l))
+    clase = ' class="ancha"' if g.get("ancho") else ""
+    if g.get("video"):
+        media = (f'<video controls preload="none" playsinline poster="{rel(ruta, g["img"])}">'
+                 f'<source src="{rel(ruta, g["video"])}" type="video/mp4"></video>')
+        clase = ' class="ancha video"'
+    else:
+        media = f'<a href="{rel(ruta, g["img"])}"><img src="{rel(ruta, g["img"])}" alt="{pie}" loading="lazy"></a>'
+    return f'<figure{clase}>{media}<figcaption>{pie}</figcaption></figure>'
 
 def boton_cv(l, ruta):
     f = SITE["cv"].get(l)
@@ -201,9 +217,7 @@ def proyecto(l, i):
         secs.append(f'<section class="psec"><h2>{e(s["h"][l])}</h2>{contenido}</section>')
     galeria = ""
     if p["galeria"]:
-        figs = "".join(
-            f'<figure><img src="{rel(ruta, g["archivo"])}" alt="{e(tx(g["pie"], l))}" loading="lazy"><figcaption>{e(tx(g["pie"], l))}</figcaption></figure>'
-            for g in p["galeria"])
+        figs = "".join(figura(g, l, ruta) for g in p["galeria"])
         galeria = f'<section class="galeria"><h2 class="sec-t">{e(T["galeria"][l])}</h2><div class="gal">{figs}</div></section>'
     sig = PROYECTOS[(i + 1) % len(PROYECTOS)]
     home_r = rel(ruta, path_home(l))
@@ -223,6 +237,7 @@ def proyecto(l, i):
     </dl>
   </header>
   {portada(p, l, ruta, "portada portada-g")}
+  {cifras(p, l)}
   <div class="proy-cuerpo">
     <aside class="proy-lat"><h2 class="mini">{e(T['herramientas'][l])}</h2><ul class="tags">{etiquetas(p, l)}</ul></aside>
     <div class="proy-txt">{''.join(secs)}</div>
@@ -250,9 +265,9 @@ def main():
             escritos.append(ruta)
     # comprobar imágenes referenciadas
     for p in PROYECTOS:
-        for g in p["galeria"]:
-            if not os.path.exists(os.path.join(RAIZ, g["archivo"])):
-                print("FALTA IMAGEN:", g["archivo"])
+        for f in [p.get("portada")] + [g.get(k) for g in p["galeria"] for k in ("img", "video")]:
+            if f and not os.path.exists(os.path.join(RAIZ, f)):
+                print("FALTA ARCHIVO:", f)
     open(os.path.join(RAIZ, ".nojekyll"), "w").close()
     print(f"{len(escritos)} páginas generadas")
 

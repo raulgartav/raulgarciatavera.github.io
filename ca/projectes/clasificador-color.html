@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Classificador automàtic de peces per color · Raúl García Tavera</title>
-<meta name="description" content="Màquina que detecta el color de cada peça amb un sensor i la classifica segons aquest color. Ajunta mecànica, electrònica i programació en un mateix sistema. Vaig coordinar l&#x27;equip durant tot el projecte.">
-<meta property="og:title" content="Classificador automàtic de peces per color · Raúl García Tavera">
-<meta property="og:description" content="Màquina que detecta el color de cada peça amb un sensor i la classifica segons aquest color. Ajunta mecànica, electrònica i programació en un mateix sistema. Vaig coordinar l&#x27;equip durant tot el projecte.">
+<title>Classificador automàtic per colors amb creu de Malta · Raúl García Tavera</title>
+<meta name="description" content="Màquina que classifica peces per colors. Una cinta les porta a una plataforma que gira a passos exactes de 90° gràcies a una creu de Malta. A cada parada, un sensor llegeix el color i tres servomotors empenyen cada peça a la seva caixa.">
+<meta property="og:title" content="Classificador automàtic per colors amb creu de Malta · Raúl García Tavera">
+<meta property="og:description" content="Màquina que classifica peces per colors. Una cinta les porta a una plataforma que gira a passos exactes de 90° gràcies a una creu de Malta. A cada parada, un sensor llegeix el color i tres servomotors empenyen cada peça a la seva caixa.">
 <meta property="og:type" content="website">
 <link rel="alternate" hreflang="es" href="https://raulgartav.github.io/proyectos/clasificador-color.html">
 <link rel="alternate" hreflang="en" href="https://raulgartav.github.io/en/projects/clasificador-color.html">
@@ -33,26 +33,27 @@
   <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> Tots els projectes</a>
   <header class="proy-cab">
     <div class="proy-tit">
-      <p class="eyebrow">REF. 01 · Projecte acadèmic en equip</p>
-      <h1>Classificador automàtic de peces per color</h1>
-      <p class="lema">Màquina que detecta el color de cada peça amb un sensor i la classifica segons aquest color. Ajunta mecànica, electrònica i programació en un mateix sistema. Vaig coordinar l&#x27;equip durant tot el projecte.</p>
+      <p class="eyebrow">REF. 01 · Projecte II · ETSEIB · equip de 4</p>
+      <h1>Classificador automàtic per colors amb creu de Malta</h1>
+      <p class="lema">Màquina que classifica peces per colors. Una cinta les porta a una plataforma que gira a passos exactes de 90° gràcies a una creu de Malta. A cada parada, un sensor llegeix el color i tres servomotors empenyen cada peça a la seva caixa.</p>
     </div>
     <dl class="cajetin">
       <div><dt>Període</dt><dd>01/2026 – 05/2026</dd></div>
-      <div><dt>Tipus</dt><dd>Projecte acadèmic en equip</dd></div>
+      <div><dt>Tipus</dt><dd>Projecte II · ETSEIB · equip de 4</dd></div>
       <div><dt>El meu paper</dt><dd>Coordinador de l&#x27;equip</dd></div>
       <div><dt>Estat</dt><dd><span class="estado estado-acabado">Acabat</span></dd></div>
     </dl>
   </header>
-  <div class="portada portada-g" aria-hidden="true"><span class="portada-ref">01</span><span class="portada-cota"></span><span class="portada-caj"><b>REF. 01</b><i>Arduino (C++)</i></span></div>
+  <div class="portada portada-g con-foto"><img src="../../img/clasificador-color/maquina-funcionando.jpg" alt="Classificador automàtic per colors amb creu de Malta"></div>
+  <dl class="cifras"><div><dt>4 × 90°</dt><dd>estacions de la creu de Malta</dd></div><div><dt>3</dt><dd>colors classificats</dd></div><div><dt>0,2 mm</dt><dd>joc pivot–ranura</dd></div><div><dt>5</dt><dd>motors coordinats</dd></div></dl>
   <div class="proy-cuerpo">
-    <aside class="proy-lat"><h2 class="mini">Eines</h2><ul class="tags"><li>Arduino (C++)</li><li>SOLIDWORKS</li><li>Impressió 3D</li><li>Motors pas a pas</li></ul></aside>
-    <div class="proy-txt"><section class="psec"><h2>El repte</h2><p>Dissenyar i construir un sistema automàtic que reconegui peces de diferents colors i les separi sense intervenció manual, integrant sensors, actuadors i mecanismes propis.</p></section><section class="psec"><h2>Què vam fer</h2><ul><li>Lectura del color de cada peça amb sensors de color.</li><li>Programa de control en Arduino, escrit en C++.</li><li>Accionament amb motors pas a pas i de corrent continu.</li><li>Mecanismes dissenyats en SOLIDWORKS i fabricats amb impressió 3D.</li></ul></section><section class="psec"><h2>El meu paper</h2><p>Vaig coordinar l&#x27;equip: vaig organitzar la feina entre els membres i em vaig encarregar que la part mecànica, l&#x27;electrònica i el programa encaixessin en una sola màquina.</p></section></div>
+    <aside class="proy-lat"><h2 class="mini">Eines</h2><ul class="tags"><li>SOLIDWORKS</li><li>Arduino (C++)</li><li>Impressió 3D</li><li>Mecanismes</li></ul></aside>
+    <div class="proy-txt"><section class="psec"><h2>El repte</h2><p>Coordinar una alimentació contínua (la cinta) amb una lectura de color que necessita la peça quieta i amb una classificació física posterior. La solució va ser un mecanisme clàssic: la creu de Malta converteix el gir continu del motor en avanços intermitents de 90°, i durant cada pausa la plataforma queda bloquejada mecànicament.</p></section><section class="psec"><h2>Com funciona</h2><ul><li>Una cinta transportadora, amb un motor de corrent continu amb reductora i peces LEGO, deixa cada peça a l&#x27;estació de lectura.</li><li>El sensor TCS3200 llegeix el color dins d&#x27;una carcassa opaca que l&#x27;aïlla de la llum ambient.</li><li>Un motor pas a pas (driver A3967) mou la roda motriu. Cada volta fa girar la plataforma 90°, i durant els 270° restants la manté bloquejada.</li><li>L&#x27;Arduino desa el color de la peça que hi ha a cada estació i activa el servo HS-422 de l&#x27;estació que li correspon.</li><li>Una pantalla LCD mostra el color detectat i el recompte per colors. Hi ha un polsador de marxa/paro i una parada d&#x27;emergència.</li></ul></section><section class="psec"><h2>Disseny i fabricació</h2><p>Totes les peces pròpies es van modelar de manera paramètrica en SOLIDWORKS amb criteris de disseny per a fabricació i es van imprimir en PLA. Entre el pivot i les ranures de la creu es va deixar un joc de 0,2 mm perquè l&#x27;encaix fos suau. Abans d&#x27;imprimir, vam comprovar el muntatge amb detecció d&#x27;interferències i un estudi de moviment, perquè els braços dels servos no xoquessin amb el suport del sensor.</p></section><section class="psec"><h2>Control</h2><p>El programa en C++ sincronitza tres coses: la lectura del sensor, el gir de la plataforma i l&#x27;accionament dels servos. Perquè cap tasca bloquegi les altres, l&#x27;avanç del motor pas a pas es temporitza amb millis() en lloc de pauses fixes. Abans de cada ús es calibra el sensor amb peces de referència de cada color.</p></section><section class="psec"><h2>El meu paper</h2><p>Vaig coordinar l&#x27;equip de quatre persones durant tot el projecte, des de la proposta fins al prototip final i el pòster.</p></section></div>
   </div>
-  
-  <a class="siguiente" href="brazo-robotico.html">
+  <section class="galeria"><h2 class="sec-t">Imatges</h2><div class="gal"><figure class="ancha video"><video controls preload="none" playsinline poster="../../img/clasificador-color/maquina-funcionando.jpg"><source src="../../img/clasificador-color/funcionamiento.mp4" type="video/mp4"></video><figcaption>El prototip classificant peces al laboratori.</figcaption></figure><figure><a href="../../img/clasificador-color/ensamblaje-cad.jpg"><img src="../../img/clasificador-color/ensamblaje-cad.jpg" alt="Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes." loading="lazy"></a><figcaption>Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes.</figcaption></figure><figure class="ancha video"><video controls preload="none" playsinline poster="../../img/clasificador-color/simulacion-solidworks.jpg"><source src="../../img/clasificador-color/simulacion-solidworks.mp4" type="video/mp4"></video><figcaption>Estudi de moviment en SOLIDWORKS per comprovar la sincronització.</figcaption></figure><figure><a href="../../img/clasificador-color/pantalla-lcd.jpg"><img src="../../img/clasificador-color/pantalla-lcd.jpg" alt="La pantalla mostra l&#x27;estat i el recompte per colors." loading="lazy"></a><figcaption>La pantalla mostra l&#x27;estat i el recompte per colors.</figcaption></figure><figure class="ancha"><a href="../../img/clasificador-color/diagrama-flujo.jpg"><img src="../../img/clasificador-color/diagrama-flujo.jpg" alt="Diagrama de flux del programa de control." loading="lazy"></a><figcaption>Diagrama de flux del programa de control.</figcaption></figure></div></section>
+  <a class="siguiente" href="abridor-fem.html">
     <span class="mini">Següent projecte</span>
-    <span class="sig-t">Braç robòtic de 5 graus de llibertat <span aria-hidden="true">→</span></span>
+    <span class="sig-t">Obridor d&#x27;ampolles optimitzat amb elements finits <span aria-hidden="true">→</span></span>
   </a>
 </main>
 <footer class="pie">

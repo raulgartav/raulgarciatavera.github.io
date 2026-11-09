@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biga de PLA impresa en 3D · Raúl García Tavera</title>
+<meta name="description" content="Disseny, càlcul, fabricació i assaig d&#x27;un element resistent que salva dos obstacles i suporta 250 N entre suports separats 500 mm. La fletxa havia de ser com a màxim de 15 mm i el coeficient de seguretat d&#x27;entre 1,5 i 2,5. Ho vam resoldre amb una secció en doble T impresa en PLA.">
+<meta property="og:title" content="Biga de PLA impresa en 3D · Raúl García Tavera">
+<meta property="og:description" content="Disseny, càlcul, fabricació i assaig d&#x27;un element resistent que salva dos obstacles i suporta 250 N entre suports separats 500 mm. La fletxa havia de ser com a màxim de 15 mm i el coeficient de seguretat d&#x27;entre 1,5 i 2,5. Ho vam resoldre amb una secció en doble T impresa en PLA.">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="es" href="https://raulgartav.github.io/proyectos/viga-impresa.html">
+<link rel="alternate" hreflang="en" href="https://raulgartav.github.io/en/projects/viga-impresa.html">
+<link rel="alternate" hreflang="ca" href="https://raulgartav.github.io/ca/projectes/viga-impresa.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c3faa'/%3E%3Cpath d='M6 26V6h20v20z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='12' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/estilo.css">
+</head>
+<body>
+<header class="barra">
+  <div class="barra-in">
+    <a class="marca" href="../index.html"><span class="marca-c">RG</span><span class="marca-n">Raúl García Tavera</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="../index.html#proyectos">Projectes</a>
+      <a href="../index.html#sobre">Sobre mi</a>
+      <a href="../index.html#contacto">Contacte</a>
+      <span class="idiomas" aria-label="Idioma"><a href="../../proyectos/viga-impresa.html" hreflang="es" lang="es">ES</a><a href="../../en/projects/viga-impresa.html" hreflang="en" lang="en">EN</a><a href="viga-impresa.html" hreflang="ca" lang="ca" aria-current="true">CA</a></span>
+    </nav>
+  </div>
+</header>
+<main class="envoltura proy">
+  <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> Tots els projectes</a>
+  <header class="proy-cab">
+    <div class="proy-tit">
+      <p class="eyebrow">REF. 03 · Resistència de Materials · equip de 3</p>
+      <h1>Biga de PLA impresa en 3D</h1>
+      <p class="lema">Disseny, càlcul, fabricació i assaig d&#x27;un element resistent que salva dos obstacles i suporta 250 N entre suports separats 500 mm. La fletxa havia de ser com a màxim de 15 mm i el coeficient de seguretat d&#x27;entre 1,5 i 2,5. Ho vam resoldre amb una secció en doble T impresa en PLA.</p>
+    </div>
+    <dl class="cajetin">
+      <div><dt>Període</dt><dd>02/2026 – 05/2026</dd></div>
+      <div><dt>Tipus</dt><dd>Resistència de Materials · equip de 3</dd></div>
+      <div><dt>El meu paper</dt><dd>Càlcul, disseny i impressió</dd></div>
+      <div><dt>Estat</dt><dd><span class="estado estado-acabado">Acabat</span></dd></div>
+    </dl>
+  </header>
+  <div class="portada portada-g con-foto"><img src="../../img/viga-impresa/viga-final.jpg" alt="Biga de PLA impresa en 3D"></div>
+  <dl class="cifras"><div><dt>250 N</dt><dd>càrrega de servei</dd></div><div><dt>13,8 mm</dt><dd>fletxa calculada (límit 15 mm)</dd></div><div><dt>2,50</dt><dd>coeficient de seguretat</dd></div><div><dt>107 g</dt><dd>massa teòrica</dd></div></dl>
+  <div class="proy-cuerpo">
+    <aside class="proy-lat"><h2 class="mini">Eines</h2><ul class="tags"><li>Resistència de materials</li><li>SOLIDWORKS Simulation</li><li>Impressió 3D</li><li>Castigliano</li></ul></aside>
+    <div class="proy-txt"><section class="psec"><h2>Geometria</h2><p>La forma de la biga venia condicionada per dos obstacles. Vam iterar l&#x27;angle del tram inclinat i la longitud del primer tram, i vam triar 65° i 185 mm. És un compromís entre moment flector baix, un repartiment raonable entre axial i tallant, i unions fàcils de fabricar.</p></section><section class="psec"><h2>Material i secció</h2><p>Amb diagrames d&#x27;Ashby vam triar PLA (E = 2.800 MPa, límit de 60 MPa) imprès al 100 % de farciment: és barat, accessible i permet una geometria a mida. Vam triar una secció en doble T perquè és simètrica i aprofita igual les ales a tracció i a compressió. La vam dimensionar iterant amb la llei de Navier, el criteri de Rankine i el teorema de Castigliano, buscant la mínima massa que ho complís tot. El resultat va ser una secció de 18 × 30 mm amb parets de 2 i 3 mm.</p></section><section class="psec"><h2>Fabricació</h2><p>La biga fa 500 mm i la placa de la impressora (Bambu Lab A1) només 256 mm, així que la vam imprimir en dues peces unides amb un empalmament a solapa i un cargol M4 d&#x27;acer. A la zona de la unió vam reforçar l&#x27;ànima fins a 10 mm, de manera que el coeficient de seguretat allà va passar a 3,5. Vam ajustar els paràmetres d&#x27;impressió (230 °C, capes de 0,16 mm, 5 perímetres, farciment rectilini al 100 %) perquè les propietats s&#x27;acostessin a les de la fitxa tècnica.</p></section><section class="psec"><h2>El primer prototip va fallar</h2><p>La primera biga la vam imprimir en PLA Matte, que va resultar tenir un mòdul de Young força més baix que el fet servir als càlculs. La vam provar a casa i es va trencar molt abans del que esperàvem, separant-se entre capes al tram inclinat. Havíem imprès totes les capes en horitzontal, i al tram diagonal la tensió normal actuava en part perpendicular a elles. Vam tornar a imprimir en PLA Basic, orientant cada tram perquè les fibres seguissin la direcció de la tensió.</p></section><section class="psec"><h2>Verificació per elements finits</h2><p>Vam contrastar el càlcul a mà amb SOLIDWORKS Simulation, amb una malla d&#x27;uns 58.000 nodes. La simulació va donar una fletxa d&#x27;11,3 mm, davant dels 13,8 mm de Castigliano. La diferència és raonable: el model 3D recull la rigidesa extra dels colzes i de la unió, que el càlcul analític no considera. Les dues xifres queden per sota del límit de 15 mm.</p></section></div>
+  </div>
+  <section class="galeria"><h2 class="sec-t">Imatges</h2><div class="gal"><figure><a href="../../img/viga-impresa/esquema.jpg"><img src="../../img/viga-impresa/esquema.jpg" alt="Plantejament: suports a 500 mm, càrrega de 250 N i dos obstacles." loading="lazy"></a><figcaption>Plantejament: suports a 500 mm, càrrega de 250 N i dos obstacles.</figcaption></figure><figure><a href="../../img/viga-impresa/seccion.jpg"><img src="../../img/viga-impresa/seccion.jpg" alt="Secció en doble T triada i els seus resultats." loading="lazy"></a><figcaption>Secció en doble T triada i els seus resultats.</figcaption></figure><figure><a href="../../img/viga-impresa/fem-tensiones.jpg"><img src="../../img/viga-impresa/fem-tensiones.jpg" alt="Tensions en SOLIDWORKS Simulation." loading="lazy"></a><figcaption>Tensions en SOLIDWORKS Simulation.</figcaption></figure><figure><a href="../../img/viga-impresa/fem-desplazamientos.jpg"><img src="../../img/viga-impresa/fem-desplazamientos.jpg" alt="Desplaçament vertical: 11,3 mm al punt de càrrega." loading="lazy"></a><figcaption>Desplaçament vertical: 11,3 mm al punt de càrrega.</figcaption></figure><figure><a href="../../img/viga-impresa/impresion.jpg"><img src="../../img/viga-impresa/impresion.jpg" alt="Impressió de les peces a la Bambu Lab A1." loading="lazy"></a><figcaption>Impressió de les peces a la Bambu Lab A1.</figcaption></figure><figure><a href="../../img/viga-impresa/primer-prototipo-roto.jpg"><img src="../../img/viga-impresa/primer-prototipo-roto.jpg" alt="Primer prototip: trencament entre capes al tram inclinat." loading="lazy"></a><figcaption>Primer prototip: trencament entre capes al tram inclinat.</figcaption></figure><figure><a href="../../img/viga-impresa/orientacion-incorrecta.jpg"><img src="../../img/viga-impresa/orientacion-incorrecta.jpg" alt="Orientació inicial: capes creuades amb la tensió al tram diagonal." loading="lazy"></a><figcaption>Orientació inicial: capes creuades amb la tensió al tram diagonal.</figcaption></figure><figure><a href="../../img/viga-impresa/orientacion-correcta.jpg"><img src="../../img/viga-impresa/orientacion-correcta.jpg" alt="Orientació corregida: fibres alineades a tots els trams." loading="lazy"></a><figcaption>Orientació corregida: fibres alineades a tots els trams.</figcaption></figure></div></section>
+  <a class="siguiente" href="brazo-robotico.html">
+    <span class="mini">Següent projecte</span>
+    <span class="sig-t">Braç robòtic de 5 graus de llibertat <span aria-hidden="true">→</span></span>
+  </a>
+</main>
+<footer class="pie">
+  <div class="envoltura pie-in">
+    <span>© 2026 Raúl García Tavera</span>
+    <span>S&#x27;actualitza amb cada projecte nou.</span>
+  </div>
+</footer>
+</body>
+</html>

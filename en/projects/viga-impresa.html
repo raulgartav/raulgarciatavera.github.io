@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D-printed PLA beam · Raúl García Tavera</title>
+<meta name="description" content="Design, calculation, manufacture and testing of a load-bearing element that clears two obstacles and carries 250 N between supports 500 mm apart. Deflection had to stay at or below 15 mm and the safety factor between 1.5 and 2.5. We solved it with a 3D-printed PLA I-section.">
+<meta property="og:title" content="3D-printed PLA beam · Raúl García Tavera">
+<meta property="og:description" content="Design, calculation, manufacture and testing of a load-bearing element that clears two obstacles and carries 250 N between supports 500 mm apart. Deflection had to stay at or below 15 mm and the safety factor between 1.5 and 2.5. We solved it with a 3D-printed PLA I-section.">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="es" href="https://raulgartav.github.io/proyectos/viga-impresa.html">
+<link rel="alternate" hreflang="en" href="https://raulgartav.github.io/en/projects/viga-impresa.html">
+<link rel="alternate" hreflang="ca" href="https://raulgartav.github.io/ca/projectes/viga-impresa.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c3faa'/%3E%3Cpath d='M6 26V6h20v20z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='12' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/estilo.css">
+</head>
+<body>
+<header class="barra">
+  <div class="barra-in">
+    <a class="marca" href="../index.html"><span class="marca-c">RG</span><span class="marca-n">Raúl García Tavera</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="../index.html#proyectos">Projects</a>
+      <a href="../index.html#sobre">About</a>
+      <a href="../index.html#contacto">Contact</a>
+      <span class="idiomas" aria-label="Language"><a href="../../proyectos/viga-impresa.html" hreflang="es" lang="es">ES</a><a href="viga-impresa.html" hreflang="en" lang="en" aria-current="true">EN</a><a href="../../ca/projectes/viga-impresa.html" hreflang="ca" lang="ca">CA</a></span>
+    </nav>
+  </div>
+</header>
+<main class="envoltura proy">
+  <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> All projects</a>
+  <header class="proy-cab">
+    <div class="proy-tit">
+      <p class="eyebrow">REF. 03 · Strength of Materials · team of 3</p>
+      <h1>3D-printed PLA beam</h1>
+      <p class="lema">Design, calculation, manufacture and testing of a load-bearing element that clears two obstacles and carries 250 N between supports 500 mm apart. Deflection had to stay at or below 15 mm and the safety factor between 1.5 and 2.5. We solved it with a 3D-printed PLA I-section.</p>
+    </div>
+    <dl class="cajetin">
+      <div><dt>Period</dt><dd>02/2026 – 05/2026</dd></div>
+      <div><dt>Type</dt><dd>Strength of Materials · team of 3</dd></div>
+      <div><dt>My role</dt><dd>Calculation, design and printing</dd></div>
+      <div><dt>Status</dt><dd><span class="estado estado-acabado">Completed</span></dd></div>
+    </dl>
+  </header>
+  <div class="portada portada-g con-foto"><img src="../../img/viga-impresa/viga-final.jpg" alt="3D-printed PLA beam"></div>
+  <dl class="cifras"><div><dt>250 N</dt><dd>service load</dd></div><div><dt>13,8 mm</dt><dd>calculated deflection (15 mm limit)</dd></div><div><dt>2,50</dt><dd>safety factor</dd></div><div><dt>107 g</dt><dd>theoretical mass</dd></div></dl>
+  <div class="proy-cuerpo">
+    <aside class="proy-lat"><h2 class="mini">Tools</h2><ul class="tags"><li>Strength of materials</li><li>SOLIDWORKS Simulation</li><li>3D printing</li><li>Castigliano</li></ul></aside>
+    <div class="proy-txt"><section class="psec"><h2>Geometry</h2><p>The shape of the beam was dictated by two obstacles. We iterated the angle of the inclined segment and the length of the first segment, and chose 65° and 185 mm. It balances a low bending moment, a reasonable split between axial and shear force, and joints that are easy to make.</p></section><section class="psec"><h2>Material and cross-section</h2><p>Using Ashby charts we chose PLA (E = 2,800 MPa, 60 MPa strength) printed at 100% infill: it is cheap, accessible and allows a custom geometry. We chose an I-section because it is symmetric and uses both flanges equally in tension and compression. We sized it iteratively with Navier&#x27;s law, the Rankine criterion and Castigliano&#x27;s theorem, looking for the lowest mass that met every limit. The result was an 18 × 30 mm section with 2 and 3 mm walls.</p></section><section class="psec"><h2>Manufacturing</h2><p>The beam is 500 mm long and the printer bed (Bambu Lab A1) is only 256 mm, so we printed it in two parts joined by a lap splice with a steel M4 bolt. Around the joint we thickened the web to 10 mm, which raised the safety factor there to 3.5. We tuned the print settings (230 °C, 0.16 mm layers, 5 perimeters, 100% rectilinear infill) so the properties would match the datasheet.</p></section><section class="psec"><h2>The first prototype failed</h2><p>We printed the first beam in PLA Matte, which turned out to have a much lower Young&#x27;s modulus than the one used in the calculations. We tested it at home and it broke far earlier than expected, splitting between layers in the inclined segment. All layers had been printed horizontally, so in the diagonal segment the normal stress acted partly across them. We reprinted in PLA Basic, orienting each segment so the fibres followed the stress direction.</p></section><section class="psec"><h2>Finite element check</h2><p>We checked the hand calculation with SOLIDWORKS Simulation, using a mesh of about 58,000 nodes. The simulation gave an 11.3 mm deflection, against 13.8 mm from Castigliano. The difference makes sense: the 3D model captures the extra stiffness of the corners and the joint, which the analytical model leaves out. Both values are below the 15 mm limit.</p></section></div>
+  </div>
+  <section class="galeria"><h2 class="sec-t">Images</h2><div class="gal"><figure><a href="../../img/viga-impresa/esquema.jpg"><img src="../../img/viga-impresa/esquema.jpg" alt="Problem set-up: supports 500 mm apart, 250 N load and two obstacles." loading="lazy"></a><figcaption>Problem set-up: supports 500 mm apart, 250 N load and two obstacles.</figcaption></figure><figure><a href="../../img/viga-impresa/seccion.jpg"><img src="../../img/viga-impresa/seccion.jpg" alt="Chosen I-section and its results." loading="lazy"></a><figcaption>Chosen I-section and its results.</figcaption></figure><figure><a href="../../img/viga-impresa/fem-tensiones.jpg"><img src="../../img/viga-impresa/fem-tensiones.jpg" alt="Stresses in SOLIDWORKS Simulation." loading="lazy"></a><figcaption>Stresses in SOLIDWORKS Simulation.</figcaption></figure><figure><a href="../../img/viga-impresa/fem-desplazamientos.jpg"><img src="../../img/viga-impresa/fem-desplazamientos.jpg" alt="Vertical displacement: 11.3 mm at the load point." loading="lazy"></a><figcaption>Vertical displacement: 11.3 mm at the load point.</figcaption></figure><figure><a href="../../img/viga-impresa/impresion.jpg"><img src="../../img/viga-impresa/impresion.jpg" alt="Printing the parts on the Bambu Lab A1." loading="lazy"></a><figcaption>Printing the parts on the Bambu Lab A1.</figcaption></figure><figure><a href="../../img/viga-impresa/primer-prototipo-roto.jpg"><img src="../../img/viga-impresa/primer-prototipo-roto.jpg" alt="First prototype: delamination in the inclined segment." loading="lazy"></a><figcaption>First prototype: delamination in the inclined segment.</figcaption></figure><figure><a href="../../img/viga-impresa/orientacion-incorrecta.jpg"><img src="../../img/viga-impresa/orientacion-incorrecta.jpg" alt="Initial orientation: layers crossing the stress in the diagonal segment." loading="lazy"></a><figcaption>Initial orientation: layers crossing the stress in the diagonal segment.</figcaption></figure><figure><a href="../../img/viga-impresa/orientacion-correcta.jpg"><img src="../../img/viga-impresa/orientacion-correcta.jpg" alt="Corrected orientation: fibres aligned in every segment." loading="lazy"></a><figcaption>Corrected orientation: fibres aligned in every segment.</figcaption></figure></div></section>
+  <a class="siguiente" href="brazo-robotico.html">
+    <span class="mini">Next project</span>
+    <span class="sig-t">5-DOF robotic arm <span aria-hidden="true">→</span></span>
+  </a>
+</main>
+<footer class="pie">
+  <div class="envoltura pie-in">
+    <span>© 2026 Raúl García Tavera</span>
+    <span>Updated with every new project.</span>
+  </div>
+</footer>
+</body>
+</html>

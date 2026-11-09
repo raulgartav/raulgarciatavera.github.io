@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obridor d&#x27;ampolles optimitzat amb elements finits · Raúl García Tavera</title>
+<meta name="description" content="Disseny, simulació, fabricació i assaig d&#x27;un obridor de taps de metacrilat. L&#x27;objectiu era maximitzar la relació entre la càrrega de trencament i el pes, amb un coeficient de seguretat d&#x27;entre 1,5 i 2. Vam passar per quatre versions i dos assaigs a trencament.">
+<meta property="og:title" content="Obridor d&#x27;ampolles optimitzat amb elements finits · Raúl García Tavera">
+<meta property="og:description" content="Disseny, simulació, fabricació i assaig d&#x27;un obridor de taps de metacrilat. L&#x27;objectiu era maximitzar la relació entre la càrrega de trencament i el pes, amb un coeficient de seguretat d&#x27;entre 1,5 i 2. Vam passar per quatre versions i dos assaigs a trencament.">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="es" href="https://raulgartav.github.io/proyectos/abridor-fem.html">
+<link rel="alternate" hreflang="en" href="https://raulgartav.github.io/en/projects/abridor-fem.html">
+<link rel="alternate" hreflang="ca" href="https://raulgartav.github.io/ca/projectes/abridor-fem.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c3faa'/%3E%3Cpath d='M6 26V6h20v20z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='12' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/estilo.css">
+</head>
+<body>
+<header class="barra">
+  <div class="barra-in">
+    <a class="marca" href="../index.html"><span class="marca-c">RG</span><span class="marca-n">Raúl García Tavera</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="../index.html#proyectos">Projectes</a>
+      <a href="../index.html#sobre">Sobre mi</a>
+      <a href="../index.html#contacto">Contacte</a>
+      <span class="idiomas" aria-label="Idioma"><a href="../../proyectos/abridor-fem.html" hreflang="es" lang="es">ES</a><a href="../../en/projects/abridor-fem.html" hreflang="en" lang="en">EN</a><a href="abridor-fem.html" hreflang="ca" lang="ca" aria-current="true">CA</a></span>
+    </nav>
+  </div>
+</header>
+<main class="envoltura proy">
+  <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> Tots els projectes</a>
+  <header class="proy-cab">
+    <div class="proy-tit">
+      <p class="eyebrow">REF. 02 · Mecànica dels Medis Continus · equip de 3</p>
+      <h1>Obridor d&#x27;ampolles optimitzat amb elements finits</h1>
+      <p class="lema">Disseny, simulació, fabricació i assaig d&#x27;un obridor de taps de metacrilat. L&#x27;objectiu era maximitzar la relació entre la càrrega de trencament i el pes, amb un coeficient de seguretat d&#x27;entre 1,5 i 2. Vam passar per quatre versions i dos assaigs a trencament.</p>
+    </div>
+    <dl class="cajetin">
+      <div><dt>Període</dt><dd>Tardor 2025</dd></div>
+      <div><dt>Tipus</dt><dd>Mecànica dels Medis Continus · equip de 3</dd></div>
+      <div><dt>El meu paper</dt><dd>Disseny, simulació i assaigs</dd></div>
+      <div><dt>Estat</dt><dd><span class="estado estado-acabado">Acabat</span></dd></div>
+    </dl>
+  </header>
+  <div class="portada portada-g con-foto"><img src="../../img/abridor-fem/abridor-botella.jpg" alt="Obridor d&#x27;ampolles optimitzat amb elements finits"></div>
+  <dl class="cifras"><div><dt>21,5 → 10,0 g</dt><dd>massa, del primer disseny al final</dd></div><div><dt>91 N</dt><dd>trencament previst pel model</dd></div><div><dt>177 N</dt><dd>trencament real a l&#x27;assaig</dd></div><div><dt>33,8 €</dt><dd>cost de 7 prototips</dd></div></dl>
+  <div class="proy-cuerpo">
+    <aside class="proy-lat"><h2 class="mini">Eines</h2><ul class="tags"><li>ANSYS APDL</li><li>FEM</li><li>SOLIDWORKS</li><li>Assaigs</li></ul></aside>
+    <div class="proy-txt"><section class="psec"><h2>Requisits</h2><p>L&#x27;obridor havia de permetre obrir una ampolla còmodament, trencar-se amb la mà en un assaig destructiu controlat, tenir un braç de menys de 150 mm i un coeficient de seguretat d&#x27;entre 1,5 i 2. La força nominal la vam estimar a partir de dades de força de presa de la població, prenent el percentil 5 perquè gairebé qualsevol persona el pogués fer servir. L&#x27;eficiència a maximitzar era la càrrega última dividida pel pes.</p></section><section class="psec"><h2>Material</h2><p>Primer vam estudiar l&#x27;alumini, però amb força manual no es podia arribar al seu límit elàstic i costava unes cinc vegades més. Vam triar metacrilat (PMMA, E = 3.000 MPa, límit elàstic de 70 MPa), tallat per làser a Servei Estació, a Barcelona.</p></section><section class="psec"><h2>Model d&#x27;elements finits</h2><p>El model es va fer en ANSYS APDL amb elements sòlids quadràtics (SOLID183) i material elàstic, lineal i isòtrop. Vam refinar la malla als punts amb concentració de tensions. Per a cada versió vam comprovar la tracció i la compressió principals, vam calcular el coeficient de seguretat i, a partir d&#x27;ell, la càrrega última.</p></section><section class="psec"><h2>Optimització en quatre versions</h2><ul><li>Disseny inicial massís: 21,5 g, amb tensions molt per sota del límit. Sobrava material.</li><li>Versió 1: dos buidats interiors seguint el contorn, 15,5 g.</li><li>Versió 2: un tercer buidat, 14,5 g. La vam assajar i es va trencar a 82 N per compressió, just on el model marcava la tensió màxima. Amb aquesta dada vam fixar el límit real a compressió del material en 92,5 MPa.</li><li>Versió final: braç de 63 mm i gruix de 8 mm, 10,0 g. Coeficient de seguretat d&#x27;1,53, càrrega última prevista de 91 N i eficiència teòrica de 922.</li></ul></section><section class="psec"><h2>Assaig final i què en vaig aprendre</h2><p>A l&#x27;assaig destructiu, la versió final va aguantar 177 N, gairebé el doble del previst, amb un comportament elàstic i fràgil fins al trencament. El model lineal va resultar conservador per tres motius: prediu la fallada amb la tensió pic d&#x27;un sol node, no recull la redistribució local de tensions del PMMA i el punt de contacte real era diferent del simulat. El coeficient de seguretat real va ser de 3,3, fora del rang demanat. La lliçó és que un model d&#x27;elements finits s&#x27;ha de contrastar amb assaigs i ajustar bé les condicions de contorn.</p></section></div>
+  </div>
+  <section class="galeria"><h2 class="sec-t">Imatges</h2><div class="gal"><figure><a href="../../img/abridor-fem/diseno-final.jpg"><img src="../../img/abridor-fem/diseno-final.jpg" alt="Disseny final en SOLIDWORKS." loading="lazy"></a><figcaption>Disseny final en SOLIDWORKS.</figcaption></figure><figure><a href="../../img/abridor-fem/fem-traccion.jpg"><img src="../../img/abridor-fem/fem-traccion.jpg" alt="Tensions principals de tracció del disseny final en ANSYS." loading="lazy"></a><figcaption>Tensions principals de tracció del disseny final en ANSYS.</figcaption></figure><figure><a href="../../img/abridor-fem/fem-compresion-detalle.jpg"><img src="../../img/abridor-fem/fem-compresion-detalle.jpg" alt="Detall de la zona crítica a compressió, amb la malla refinada." loading="lazy"></a><figcaption>Detall de la zona crítica a compressió, amb la malla refinada.</figcaption></figure><figure><a href="../../img/abridor-fem/optimizacion-1.jpg"><img src="../../img/abridor-fem/optimizacion-1.jpg" alt="Versió 1: dos buidats, 15,5 g." loading="lazy"></a><figcaption>Versió 1: dos buidats, 15,5 g.</figcaption></figure><figure><a href="../../img/abridor-fem/optimizacion-2.jpg"><img src="../../img/abridor-fem/optimizacion-2.jpg" alt="Versió 2: tres buidats, 14,5 g." loading="lazy"></a><figcaption>Versió 2: tres buidats, 14,5 g.</figcaption></figure><figure><a href="../../img/abridor-fem/ensayo-82N.jpg"><img src="../../img/abridor-fem/ensayo-82N.jpg" alt="Assaig de la versió 2: trencament a 82 N." loading="lazy"></a><figcaption>Assaig de la versió 2: trencament a 82 N.</figcaption></figure><figure><a href="../../img/abridor-fem/ensayo-fuerza-desplazamiento.jpg"><img src="../../img/abridor-fem/ensayo-fuerza-desplazamiento.jpg" alt="Corba força–desplaçament de l&#x27;assaig final: lineal fins a trencar a 177 N." loading="lazy"></a><figcaption>Corba força–desplaçament de l&#x27;assaig final: lineal fins a trencar a 177 N.</figcaption></figure><figure><a href="../../img/abridor-fem/plano.jpg"><img src="../../img/abridor-fem/plano.jpg" alt="Plànol acotat del disseny definitiu." loading="lazy"></a><figcaption>Plànol acotat del disseny definitiu.</figcaption></figure><figure><a href="../../img/abridor-fem/diseno-inicial.jpg"><img src="../../img/abridor-fem/diseno-inicial.jpg" alt="Disseny inicial massís amb les cotes principals." loading="lazy"></a><figcaption>Disseny inicial massís amb les cotes principals.</figcaption></figure></div></section>
+  <a class="siguiente" href="viga-impresa.html">
+    <span class="mini">Següent projecte</span>
+    <span class="sig-t">Biga de PLA impresa en 3D <span aria-hidden="true">→</span></span>
+  </a>
+</main>
+<footer class="pie">
+  <div class="envoltura pie-in">
+    <span>© 2026 Raúl García Tavera</span>
+    <span>S&#x27;actualitza amb cada projecte nou.</span>
+  </div>
+</footer>
+</body>
+</html>

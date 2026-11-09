@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bottle opener optimised with finite elements · Raúl García Tavera</title>
+<meta name="description" content="Design, simulation, manufacture and testing of an acrylic bottle-cap opener. The goal was to maximise the ratio between failure load and weight, with a safety factor between 1.5 and 2. It went through four versions and two destructive tests.">
+<meta property="og:title" content="Bottle opener optimised with finite elements · Raúl García Tavera">
+<meta property="og:description" content="Design, simulation, manufacture and testing of an acrylic bottle-cap opener. The goal was to maximise the ratio between failure load and weight, with a safety factor between 1.5 and 2. It went through four versions and two destructive tests.">
+<meta property="og:type" content="website">
+<link rel="alternate" hreflang="es" href="https://raulgartav.github.io/proyectos/abridor-fem.html">
+<link rel="alternate" hreflang="en" href="https://raulgartav.github.io/en/projects/abridor-fem.html">
+<link rel="alternate" hreflang="ca" href="https://raulgartav.github.io/ca/projectes/abridor-fem.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c3faa'/%3E%3Cpath d='M6 26V6h20v20z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='12' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/estilo.css">
+</head>
+<body>
+<header class="barra">
+  <div class="barra-in">
+    <a class="marca" href="../index.html"><span class="marca-c">RG</span><span class="marca-n">Raúl García Tavera</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="../index.html#proyectos">Projects</a>
+      <a href="../index.html#sobre">About</a>
+      <a href="../index.html#contacto">Contact</a>
+      <span class="idiomas" aria-label="Language"><a href="../../proyectos/abridor-fem.html" hreflang="es" lang="es">ES</a><a href="abridor-fem.html" hreflang="en" lang="en" aria-current="true">EN</a><a href="../../ca/projectes/abridor-fem.html" hreflang="ca" lang="ca">CA</a></span>
+    </nav>
+  </div>
+</header>
+<main class="envoltura proy">
+  <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> All projects</a>
+  <header class="proy-cab">
+    <div class="proy-tit">
+      <p class="eyebrow">REF. 02 · Continuum Mechanics · team of 3</p>
+      <h1>Bottle opener optimised with finite elements</h1>
+      <p class="lema">Design, simulation, manufacture and testing of an acrylic bottle-cap opener. The goal was to maximise the ratio between failure load and weight, with a safety factor between 1.5 and 2. It went through four versions and two destructive tests.</p>
+    </div>
+    <dl class="cajetin">
+      <div><dt>Period</dt><dd>Autumn 2025</dd></div>
+      <div><dt>Type</dt><dd>Continuum Mechanics · team of 3</dd></div>
+      <div><dt>My role</dt><dd>Design, simulation and testing</dd></div>
+      <div><dt>Status</dt><dd><span class="estado estado-acabado">Completed</span></dd></div>
+    </dl>
+  </header>
+  <div class="portada portada-g con-foto"><img src="../../img/abridor-fem/abridor-botella.jpg" alt="Bottle opener optimised with finite elements"></div>
+  <dl class="cifras"><div><dt>21,5 → 10,0 g</dt><dd>mass, first to final design</dd></div><div><dt>91 N</dt><dd>failure load predicted by FEM</dd></div><div><dt>177 N</dt><dd>measured failure load</dd></div><div><dt>33,8 €</dt><dd>cost of 7 prototypes</dd></div></dl>
+  <div class="proy-cuerpo">
+    <aside class="proy-lat"><h2 class="mini">Tools</h2><ul class="tags"><li>ANSYS APDL</li><li>FEM</li><li>SOLIDWORKS</li><li>Testing</li></ul></aside>
+    <div class="proy-txt"><section class="psec"><h2>Requirements</h2><p>The opener had to open a bottle comfortably, break by hand in a controlled destructive test, have a lever arm under 150 mm and a safety factor between 1.5 and 2. We estimated the nominal force from population grip-strength data, using the 5th percentile so almost anyone could use it. The efficiency to maximise was ultimate load divided by weight.</p></section><section class="psec"><h2>Material</h2><p>We first studied aluminium, but its yield point could not be reached by hand and it cost about five times more. We chose acrylic (PMMA, E = 3,000 MPa, 70 MPa yield strength), laser-cut at Servei Estació in Barcelona.</p></section><section class="psec"><h2>Finite element model</h2><p>The model was built in ANSYS APDL with quadratic solid elements (SOLID183) and a linear elastic isotropic material, with mesh refinement at stress concentrations. For each version we checked principal tension and compression, computed the safety factor and, from it, the ultimate load.</p></section><section class="psec"><h2>Four design iterations</h2><ul><li>Solid initial design: 21.5 g, with stresses well below the limit. There was material to spare.</li><li>Version 1: two internal cut-outs following the outline, 15.5 g.</li><li>Version 2: a third cut-out, 14.5 g. We tested it and it broke at 82 N in compression, exactly where the model showed peak stress. That gave us the real compressive limit of the material: 92.5 MPa.</li><li>Final version: 63 mm lever arm and 8 mm thickness, 10.0 g. Safety factor 1.53, predicted ultimate load 91 N and theoretical efficiency of 922.</li></ul></section><section class="psec"><h2>Final test and what I learned</h2><p>In the destructive test the final version held 177 N, almost twice the prediction, behaving elastically and brittle up to failure. The linear model proved conservative for three reasons: it predicts failure from a single-node peak stress, it ignores local stress redistribution in PMMA, and the real contact point differed from the simulated one. The real safety factor was 3.3, outside the required range. The lesson is that a finite element model has to be checked against tests and its boundary conditions tuned carefully.</p></section></div>
+  </div>
+  <section class="galeria"><h2 class="sec-t">Images</h2><div class="gal"><figure><a href="../../img/abridor-fem/diseno-final.jpg"><img src="../../img/abridor-fem/diseno-final.jpg" alt="Final design in SOLIDWORKS." loading="lazy"></a><figcaption>Final design in SOLIDWORKS.</figcaption></figure><figure><a href="../../img/abridor-fem/fem-traccion.jpg"><img src="../../img/abridor-fem/fem-traccion.jpg" alt="Principal tensile stresses of the final design in ANSYS." loading="lazy"></a><figcaption>Principal tensile stresses of the final design in ANSYS.</figcaption></figure><figure><a href="../../img/abridor-fem/fem-compresion-detalle.jpg"><img src="../../img/abridor-fem/fem-compresion-detalle.jpg" alt="Close-up of the critical compression zone with refined mesh." loading="lazy"></a><figcaption>Close-up of the critical compression zone with refined mesh.</figcaption></figure><figure><a href="../../img/abridor-fem/optimizacion-1.jpg"><img src="../../img/abridor-fem/optimizacion-1.jpg" alt="Version 1: two cut-outs, 15.5 g." loading="lazy"></a><figcaption>Version 1: two cut-outs, 15.5 g.</figcaption></figure><figure><a href="../../img/abridor-fem/optimizacion-2.jpg"><img src="../../img/abridor-fem/optimizacion-2.jpg" alt="Version 2: three cut-outs, 14.5 g." loading="lazy"></a><figcaption>Version 2: three cut-outs, 14.5 g.</figcaption></figure><figure><a href="../../img/abridor-fem/ensayo-82N.jpg"><img src="../../img/abridor-fem/ensayo-82N.jpg" alt="Test of version 2: failure at 82 N." loading="lazy"></a><figcaption>Test of version 2: failure at 82 N.</figcaption></figure><figure><a href="../../img/abridor-fem/ensayo-fuerza-desplazamiento.jpg"><img src="../../img/abridor-fem/ensayo-fuerza-desplazamiento.jpg" alt="Force–displacement curve of the final test: linear up to failure at 177 N." loading="lazy"></a><figcaption>Force–displacement curve of the final test: linear up to failure at 177 N.</figcaption></figure><figure><a href="../../img/abridor-fem/plano.jpg"><img src="../../img/abridor-fem/plano.jpg" alt="Dimensioned drawing of the final design." loading="lazy"></a><figcaption>Dimensioned drawing of the final design.</figcaption></figure><figure><a href="../../img/abridor-fem/diseno-inicial.jpg"><img src="../../img/abridor-fem/diseno-inicial.jpg" alt="Solid initial design with its main dimensions." loading="lazy"></a><figcaption>Solid initial design with its main dimensions.</figcaption></figure></div></section>
+  <a class="siguiente" href="viga-impresa.html">
+    <span class="mini">Next project</span>
+    <span class="sig-t">3D-printed PLA beam <span aria-hidden="true">→</span></span>
+  </a>
+</main>
+<footer class="pie">
+  <div class="envoltura pie-in">
+    <span>© 2026 Raúl García Tavera</span>
+    <span>Updated with every new project.</span>
+  </div>
+</footer>
+</body>
+</html>
