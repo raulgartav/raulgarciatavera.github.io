@@ -40,5 +40,5 @@ Web estática sin dependencias. No se edita el HTML generado: se edita la fuente
 
 ## Pendiente
 
-- Fotos o vídeo del brazo robótico y del motor DC.
+- Fotos o vídeo del brazo robótico.
 - Resultado del ensayo de la viga en el laboratorio.

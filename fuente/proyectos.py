@@ -6,7 +6,7 @@
 I3D = {"es": "Impresión 3D", "en": "3D printing", "ca": "Impressió 3D"}
 
 # Del más reciente al más antiguo. Un proyecto nuevo se añade al principio.
-ORDEN = ["brazo-robotico", "motor-dc", "clasificador-color", "viga-impresa", "abridor-fem"]
+ORDEN = ["brazo-robotico", "clasificador-color", "viga-impresa", "abridor-fem"]
 
 PROYECTOS = [
 # ───────────────────────────── Clasificador
@@ -225,37 +225,6 @@ PROYECTOS = [
     ],
     "galeria": [],
 },
-# ───────────────────────────── Motor
-{
-    "slug": "motor-dc",
-    "estado": "acabado",
-    "periodo": {"es": "2026", "en": "2026", "ca": "2026"},
-    "tipo": {"es": "Parte práctica de un trabajo universitario", "en": "Practical part of a university assignment", "ca": "Part pràctica d'un treball universitari"},
-    "papel": {"es": "Diseño, fabricación y pruebas", "en": "Design, manufacturing and testing", "ca": "Disseny, fabricació i proves"},
-    "titulo": {"es": "Motor de corriente continua casero", "en": "Home-built DC motor", "ca": "Motor de corrent continu casolà"},
-    "resumen": {
-        "es": "Motor de corriente continua construido desde cero con dos imanes de neodimio, tres bobinas y un conmutador. Las piezas están diseñadas en SOLIDWORKS e impresas en 3D. Es la parte práctica de un trabajo sobre motores eléctricos.",
-        "en": "A DC motor built from scratch with two neodymium magnets, three coils and a commutator. The parts are designed in SOLIDWORKS and 3D-printed. It is the practical part of an assignment on electric motors.",
-        "ca": "Motor de corrent continu construït des de zero amb dos imants de neodimi, tres bobines i un commutador. Les peces estan dissenyades en SOLIDWORKS i impreses en 3D. És la part pràctica d'un treball sobre motors elèctrics.",
-    },
-    "etiquetas": ["SOLIDWORKS", I3D, {"es": "Electromagnetismo", "en": "Electromagnetism", "ca": "Electromagnetisme"}],
-    "cifras": [],
-    "secciones": [
-        {"h": {"es": "Contexto", "en": "Context", "ca": "Context"},
-         "p": {"es": "El motor acompaña un trabajo universitario sobre motores eléctricos que parte de las ecuaciones de Maxwell. Quería comprobar en una máquina real lo que el trabajo explica sobre el papel.",
-               "en": "The motor accompanies a university assignment on electric motors that starts from Maxwell's equations. I wanted to check on a real machine what the assignment explains on paper.",
-               "ca": "El motor acompanya un treball universitari sobre motors elèctrics que parteix de les equacions de Maxwell. Volia comprovar en una màquina real el que el treball explica sobre el paper."}},
-        {"h": {"es": "Cómo está hecho", "en": "How it is built", "ca": "Com està fet"},
-         "l": {"es": ["Dos imanes de neodimio que crean el campo magnético.", "Tres bobinas situadas entre los imanes.", "Conmutador que invierte la corriente para mantener el giro.", "Soportes y piezas diseñados en SOLIDWORKS e impresos en 3D."],
-               "en": ["Two neodymium magnets that create the magnetic field.", "Three coils placed between the magnets.", "A commutator that reverses the current to keep it turning.", "Supports and parts designed in SOLIDWORKS and 3D-printed."],
-               "ca": ["Dos imants de neodimi que creen el camp magnètic.", "Tres bobines situades entre els imants.", "Commutador que inverteix el corrent per mantenir el gir.", "Suports i peces dissenyats en SOLIDWORKS i impresos en 3D."]}},
-        {"h": {"es": "Proceso", "en": "Process", "ca": "Procés"},
-         "p": {"es": "Primero probé el principio con una sola bobina y, cuando funcionó, monté las tres y el conmutador hasta tener el motor completo girando.",
-               "en": "I first tested the principle with a single coil and, once it worked, assembled all three coils and the commutator until the complete motor was running.",
-               "ca": "Primer vaig provar el principi amb una sola bobina i, quan va funcionar, vaig muntar les tres bobines i el commutador fins a tenir el motor complet girant."}},
-    ],
-    "galeria": [],
-},
 ]
 
 
@@ -295,7 +264,6 @@ FLECHA = {
 
 MAQUETA = {
     "brazo-robotico": {1: {"anim": "brazo"}},
-    "motor-dc": {1: {"anim": "motor"}},
     "clasificador-color": {
         0: {"anim": "ginebra"},
         1: {"filas": [["funcionamiento"]]},
@@ -345,11 +313,6 @@ GANCHOS = {
         "en": "The first goal is to pick up an object and place it at the coordinates it is given.",
         "ca": "El primer objectiu és que agafi un objecte i el deixi a les coordenades que se li indiquen.",
     },
-    "motor-dc": {
-        "es": "Un motor construido desde cero para comprobar en una máquina real lo que el trabajo explica sobre el papel.",
-        "en": "A motor built from scratch to check on a real machine what the report explains on paper.",
-        "ca": "Un motor construït des de zero per comprovar en una màquina real el que el treball explica sobre el paper.",
-    },
     "clasificador-color": {
         "es": "La plataforma avanza 90°, se bloquea y, mientras está quieta, un sensor lee el color de la pieza.",
         "en": "The platform advances 90°, locks and, while it is still, a sensor reads the colour of the part.",
@@ -371,8 +334,7 @@ GANCHOS = {
 #   "esquema": dibujo animado para los proyectos que aún no tienen fotos · "video": bucle corto · "extra": segunda imagen
 DESTACADOS = {
     "brazo-robotico": {"forma": "a", "esquema": "brazo"},
-    "motor-dc": {"forma": "b", "esquema": "motor"},
-    "clasificador-color": {"forma": "a", "video": "img/clasificador-color/funcionamiento-corto.mp4"},
+    "clasificador-color": {"forma": "b", "video": "img/clasificador-color/funcionamiento-corto.mp4"},
     "viga-impresa": {"forma": "c"},
     "abridor-fem": {"forma": "b", "extra": "img/abridor-fem/fem-traccion.jpg",
                     "extra_alt": {"es": "Tensiones principales de tracción del diseño final en ANSYS.",
