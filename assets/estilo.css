@@ -201,6 +201,7 @@ button { font: inherit; color: inherit; }
 .contacto-c p { color: var(--banda-2); max-width: 40ch; }
 .contacto-l { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 20px; }
 .contacto-l a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 1.375rem; font-weight: 500; font-stretch: 108%; color: var(--banda-t); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--banda-t) 40%, transparent); text-underline-offset: .28em; transition: text-decoration-color .25s; }
+.contacto-l .correo { overflow-wrap: anywhere; }
 .contacto-l a:hover { color: var(--banda-t); text-decoration-color: var(--banda-t); }
 .contacto-l a:hover .ico { transform: translate(3px, -3px); }
 .contacto :focus-visible { outline-color: var(--banda-t); }

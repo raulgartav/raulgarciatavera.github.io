@@ -6,8 +6,7 @@
 SITE = {
     "nombre": "Raúl García Tavera",
     "linkedin": "https://www.linkedin.com/in/raulgarciatavera/",
-    "github": "https://github.com/raulgartav",
-    "email": None,          # p. ej. "raulgarciatavera123@gmail.com" — pendiente de confirmar
+    "email": "raulgarciatavera123@gmail.com",
     "cv": {                 # PDF del CV por idioma (ruta dentro de la web); None = no se muestra
         "es": None, "en": None, "ca": None,
     },
@@ -55,9 +54,9 @@ T = {
         "ca": "Vols més detall d'algun projecte?",
     },
     "contacto_p": {
-        "es": "Escríbeme por LinkedIn.",
-        "en": "Message me on LinkedIn.",
-        "ca": "Escriu-me per LinkedIn.",
+        "es": "Escríbeme por LinkedIn o por correo.",
+        "en": "Message me on LinkedIn or by email.",
+        "ca": "Escriu-me per LinkedIn o per correu.",
     },
     "esq_brazo": {
         "es": "Esquema: cinco articulaciones en serie, de la base al extremo que coge los objetos.",

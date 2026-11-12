@@ -344,7 +344,7 @@ def pagina(l, ruta, titulo, descripcion, cuerpo, alternos, og_img=None, extra_he
   <div class="ancho pie-in">
     <span>© 2026 {e(SITE['nombre'])}</span>
     <span>{e(T['pie'][l])}</span>
-    <span class="pie-enl"><a href="{SITE['linkedin']}" rel="me">LinkedIn</a><a href="{SITE['github']}" rel="me">GitHub</a></span>
+    <span class="pie-enl"><a href="{SITE['linkedin']}" rel="me">LinkedIn</a></span>
   </div>
 </footer>
 </body>
@@ -460,7 +460,7 @@ def home(l):
     obras = "\n  ".join(obra(p, l, ruta) for p in PROYECTOS)
     correo = ""
     if SITE["email"]:
-        correo = f'<li><a href="mailto:{e(SITE["email"])}">{e(SITE["email"])}</a></li>'
+        correo = f'\n        <li><a class="correo" href="mailto:{e(SITE["email"])}">{e(SITE["email"])}</a></li>'
     cuerpo = f"""<main id="contenido">
 <section class="hero">
   <div class="ancho hero-in">
@@ -491,7 +491,7 @@ def home(l):
       <p>{e(T['contacto_p'][l])}</p>
       <ul class="contacto-l">
         <li><a href="{SITE['linkedin']}" rel="me">LinkedIn{ICONO['fuera']}</a></li>
-        <li><a href="{SITE['github']}" rel="me">GitHub{ICONO['fuera']}</a></li>{correo}
+{correo}
       </ul>
     </div>
   </div>
@@ -500,7 +500,7 @@ def home(l):
     titulo = f"{SITE['nombre']} · {T['lema'][l].rstrip('.')}"
     persona = {
         "@context": "https://schema.org", "@type": "Person", "name": SITE["nombre"], "url": SITE_URL,
-        "sameAs": [SITE["linkedin"], SITE["github"]],
+        "sameAs": [SITE["linkedin"]],
         "knowsAbout": ["Mechanical design", "SOLIDWORKS", "Finite element analysis", "Robotics", "Automation"],
     }
     extra = f'<script type="application/ld+json">{json.dumps(persona, ensure_ascii=False)}</script>\n'
