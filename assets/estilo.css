@@ -3,7 +3,7 @@
    Una sola familia tipográfica (Mona Sans, ancho y peso variables),
    papel frío, tinta azul marino y el rojo del PLA de las piezas impresas.
    Índice: 1 fuentes · 2 variables · 3 base · 4 barra · 5 inicio · 6 proyectos
-           de portada · 7 sobre mí y contacto · 8 página de proyecto · 9 figuras,
+           de portada · 7 contacto y pie · 8 página de proyecto · 9 figuras,
            gráficos y mecanismo · 10 visor · 11 movimiento · 12 tema oscuro
    ═══════════════════════════════════════════════════════════════ */
 
@@ -149,15 +149,10 @@ button { font: inherit; color: inherit; }
 .gin-arbol { fill: var(--papel); stroke: var(--tinta); stroke-width: 1.2; }
 .gin-rot { font-size: 7px; font-weight: 500; fill: var(--tinta-2); }
 
-.hero-datos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 clamp(20px, 3vw, 40px); animation: entra .9s var(--suave) .85s both; }
-.hero-datos div { padding: 18px 0 0; border-top: 1px solid var(--tinta); }
-.hero-datos dt { font-size: .875rem; color: var(--tinta-2); }
-.hero-datos dd { margin-top: 2px; font-weight: 500; line-height: 1.35; }
-
 /* ── 6. Proyectos en la portada ── */
 .bloque { padding-top: clamp(88px, 12vw, 168px); }
 .bloque-cab { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: end; gap: 16px clamp(24px, 4vw, 64px); }
-.bloque h2, .sobre > h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-stretch: 114%; letter-spacing: -.035em; }
+.bloque h2 { font-size: clamp(2.1rem, 4.4vw, 3.5rem); font-stretch: 114%; letter-spacing: -.035em; }
 .bloque-cab p { max-width: 52ch; color: var(--tinta-2); font-size: 1.125rem; }
 
 .obra {
@@ -171,7 +166,7 @@ button { font: inherit; color: inherit; }
 .obra-c .obra-media, .obra-c .obra-txt { grid-column: 1 / 13; }
 .obra-c .obra-txt { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); column-gap: clamp(24px, 4vw, 64px); align-items: end; }
 .obra-c .obra-txt > * { grid-column: 1; }
-.obra-c .obra-cifras { grid-column: 2; grid-row: 1 / 4; margin-top: 0; }
+.obra-c .obra-cifras, .obra-c .obra-tags { grid-column: 2; grid-row: 1 / 4; margin-top: 0; }
 .obra-c .ver { grid-column: 2; }
 
 .obra-media { position: relative; }
@@ -186,44 +181,21 @@ button { font: inherit; color: inherit; }
 
 .obra-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; font-size: .9375rem; color: var(--tinta-2); }
 .obra h3 { margin-top: 12px; font-size: clamp(1.7rem, 3vw, 2.5rem); font-stretch: 112%; letter-spacing: -.03em; }
-.obra h3 a, .otro h3 a { text-decoration: none; color: var(--tinta); background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .6s var(--suave); }
-.obra h3 a::after, .otro h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
-.obra:hover h3 a, .otro:hover h3 a, .obra h3 a:focus-visible, .otro h3 a:focus-visible { background-size: 100% 2px; }
+.obra h3 a { text-decoration: none; color: var(--tinta); background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .6s var(--suave); }
+.obra h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.obra:hover h3 a, .obra h3 a:focus-visible { background-size: 100% 2px; }
 .obra-gancho { margin-top: 16px; font-size: 1.1875rem; line-height: 1.45; }
 .obra-cifras { display: grid; margin-top: 28px; border-top: 1px solid var(--linea); }
 .obra-cifras div { display: grid; grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr); align-items: baseline; gap: 16px; padding: 11px 0; border-bottom: 1px solid var(--linea); }
 .obra-cifras dt { font-size: 1.25rem; font-weight: 600; font-stretch: 112%; letter-spacing: -.02em; white-space: nowrap; }
 .obra-cifras dd { font-size: .9375rem; line-height: 1.4; color: var(--tinta-2); }
+.obra-tags { margin-top: 24px; }
 .ver { display: inline-flex; align-items: center; gap: 8px; margin-top: 28px; font-weight: 500; }
-.obra:hover .ver, .otro:hover .ver { color: var(--rojo); }
-.obra:hover .ver .ico, .otro:hover .ver .ico { transform: translateX(5px); }
+.obra:hover .ver { color: var(--rojo); }
+.obra:hover .ver .ico { transform: translateX(5px); }
 
-.otros { margin-top: clamp(88px, 11vw, 152px); }
-.otros-t { font-size: 1.5rem !important; font-stretch: 110% !important; letter-spacing: -.02em !important; }
-.otros-l { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 4vw, 64px); margin-top: 24px; }
-.otro { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 28px 0 40px; border-top: 1px solid var(--tinta); }
-.otro h3 { margin-top: 12px; font-size: 1.5rem; letter-spacing: -.02em; }
-.otro > p:not(.obra-meta) { margin-top: 12px; color: var(--tinta-2); max-width: 52ch; }
-.otro .tags { margin-top: 18px; }
-.otro .ver { margin-top: 22px; }
-
-/* ── 7. Sobre mí y contacto ── */
-.sobre { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 32px clamp(24px, 4vw, 64px); }
-.sobre > h2 { position: sticky; top: calc(var(--barra) + 32px); align-self: start; }
-.cv-fila { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: 8px 32px; padding: 28px 0; border-top: 1px solid var(--linea); }
-.cv-fila:first-child { border-top-color: var(--tinta); }
-.cv-fila h3 { font-size: 1rem; font-weight: 500; font-stretch: 100%; letter-spacing: 0; line-height: 1.6; color: var(--tinta-2); }
-.cv-l { display: grid; gap: 22px; }
-.cv-l li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 24px; }
-.cv-l li > div { grid-column: 1; grid-row: 1; }
-.cv-f { grid-column: 2; grid-row: 1; font-size: .9375rem; color: var(--tinta-2); white-space: nowrap; }
-.cv-l h4 { font-size: 1.0625rem; font-stretch: 100%; letter-spacing: -.005em; line-height: 1.4; }
-.cv-l p { margin-top: 4px; color: var(--tinta-2); font-size: 1rem; max-width: 60ch; }
-.herr { display: grid; gap: 8px; }
-.herr div { display: grid; grid-template-columns: minmax(96px, 9em) minmax(0, 1fr); gap: 4px 16px; }
-.herr dt { color: var(--tinta-2); }
-
-.contacto { margin-top: clamp(96px, 13vw, 184px); background: var(--banda); color: var(--banda-t); }
+/* ── 7. Contacto y pie ── */
+.contacto { margin-top: clamp(96px, 13vw, 176px); background: var(--banda); color: var(--banda-t); }
 .contacto-in { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; gap: 32px clamp(24px, 4vw, 64px); padding-block: clamp(64px, 9vw, 128px); }
 .contacto h2 { font-size: clamp(2.1rem, 4.8vw, 4rem); font-stretch: 114%; letter-spacing: -.035em; line-height: 1.02; }
 .contacto-c p { color: var(--banda-2); max-width: 40ch; }
@@ -332,6 +304,24 @@ body:not(.inicio) .pie-in { border-top-color: transparent; }
 .ginebra .gin-btn { min-height: 36px; padding: 0 14px; border: 1px solid var(--linea); border-radius: 6px; background: transparent; font-size: .875rem; cursor: pointer; }
 .ginebra .gin-btn:hover { border-color: var(--tinta); }
 
+/* esquemas animados de los proyectos sin fotos */
+.esq { display: grid; place-items: center; aspect-ratio: 16 / 10; padding: clamp(12px, 3vw, 32px); border: 1px solid var(--linea); border-radius: var(--r); background: var(--lamina); }
+.esq svg { width: 100%; height: 100%; overflow: visible; }
+.esq-fig { max-width: 720px; margin-top: 28px; }
+.esq-fig figcaption { margin-top: 10px; font-size: .9375rem; line-height: 1.45; color: var(--tinta-2); }
+.esq-suelo { stroke: var(--linea); stroke-width: 1.5; stroke-linecap: round; }
+.esq-campo { stroke: var(--linea); stroke-width: 1; stroke-dasharray: 2 5; stroke-linecap: round; }
+.esq-solido { fill: var(--tinta); }
+.esq-cuerpo { fill: var(--tenue); stroke: var(--tinta); stroke-width: 1.2; }
+.esq-barra { stroke: var(--tinta); stroke-linecap: round; }
+.esq-pieza { fill: var(--rojo); }
+.esq-pinza { fill: none; stroke: var(--tinta); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.esq-eje { fill: var(--papel); stroke: var(--tinta); stroke-width: 2; }
+.esq-conm { fill: none; stroke: var(--tinta); stroke-width: 6; stroke-dasharray: 19 4.04; }
+.esq-cable { fill: none; stroke: var(--tinta); stroke-width: 1.2; }
+.esq-polo { font-size: 20px; font-weight: 600; fill: var(--papel); }
+.esq-signo { font-size: 15px; font-weight: 600; fill: var(--tinta-2); }
+
 /* ── 10. Visor de imágenes ── */
 .visor { position: fixed; inset: 0; z-index: 90; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; background: rgb(9 14 26 / .96); color: #eef1f6; animation: aparece .28s ease both; }
 .visor-abierto { overflow: hidden; }
@@ -363,6 +353,21 @@ body:not(.inicio) .pie-in { border-top-color: transparent; }
 .js .barras .bar-n { opacity: 0; transition: opacity .5s ease; transition-delay: calc(var(--i) * 110ms + 700ms); }
 .js .barras.visto .bar-n { opacity: 1; }
 
+/* esquemas: se mueven una vez al aparecer y de nuevo al pasar el cursor */
+@keyframes gira { to { transform: rotate(360deg); } }
+@keyframes gira-fin { from { transform: rotate(0); } to { transform: rotate(720deg); } }
+@keyframes hombro { from { transform: rotate(-9deg); } to { transform: rotate(7deg); } }
+@keyframes codo { from { transform: rotate(12deg); } to { transform: rotate(-12deg); } }
+@keyframes muneca { from { transform: rotate(-14deg); } to { transform: rotate(10deg); } }
+.visto .esq-rotor { animation: gira-fin 4.6s cubic-bezier(.35, 0, .2, 1) .3s 1 both; }
+.visto .esq-j2 { animation: hombro 1.15s ease-in-out .3s 4 alternate both; }
+.visto .esq-j3 { animation: codo 1.15s ease-in-out .3s 4 alternate both; }
+.visto .esq-j4 { animation: muneca 1.15s ease-in-out .3s 4 alternate both; }
+.obra:hover .esq-rotor, .esq-fig:hover .esq-rotor { animation: gira 2.6s linear infinite; }
+.obra:hover .esq-j2, .esq-fig:hover .esq-j2 { animation: hombro 1.4s ease-in-out infinite alternate; }
+.obra:hover .esq-j3, .esq-fig:hover .esq-j3 { animation: codo 1.4s ease-in-out infinite alternate; }
+.obra:hover .esq-j4, .esq-fig:hover .esq-j4 { animation: muneca 1.4s ease-in-out infinite alternate; }
+
 /* paso de una página a otra: la foto del proyecto viaja hasta su sitio */
 @view-transition { navigation: auto; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .32s; }
@@ -379,9 +384,7 @@ body:not(.inicio) .pie-in { border-top-color: transparent; }
 @media (max-width: 1000px) {
   .hero-in { grid-template-columns: minmax(0, 1fr); }
   .mec { justify-self: start; max-width: 440px; }
-  .hero-datos { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 20px; }
-  .bloque-cab, .sobre, .contacto-in { grid-template-columns: minmax(0, 1fr); }
-  .sobre > h2 { position: static; }
+  .bloque-cab, .contacto-in { grid-template-columns: minmax(0, 1fr); }
   .obra .obra-media, .obra .obra-txt { grid-column: 1 / 13; grid-row: auto; }
   .obra-b .obra-media { margin-bottom: 9%; }
   .obra-extra { right: 4%; bottom: -14%; width: 38%; }
@@ -401,15 +404,10 @@ body:not(.inicio) .pie-in { border-top-color: transparent; }
   .js .nav > a::after { display: none; }
   .js .nav .idiomas { align-self: flex-start; margin-top: 16px; }
   .nav { gap: 12px; }
-  .otros-l { grid-template-columns: minmax(0, 1fr); }
-  .cv-fila { grid-template-columns: minmax(0, 1fr); }
-  .cv-l li { grid-template-columns: minmax(0, 1fr); }
-  .cv-f { grid-column: 1; grid-row: 2; }
   .ficha { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .bar { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 560px) {
-  .hero-datos { grid-template-columns: minmax(0, 1fr); }
   .fila-figs { flex-direction: column; }
   .fila-figs .fig { flex: none !important; }
   .acciones .btn { flex: 1 1 auto; justify-content: center; }

@@ -5,7 +5,8 @@
 
 I3D = {"es": "Impresión 3D", "en": "3D printing", "ca": "Impressió 3D"}
 
-ORDEN = ["clasificador-color", "abridor-fem", "viga-impresa", "brazo-robotico", "motor-dc"]
+# Del más reciente al más antiguo. Un proyecto nuevo se añade al principio.
+ORDEN = ["brazo-robotico", "motor-dc", "clasificador-color", "viga-impresa", "abridor-fem"]
 
 PROYECTOS = [
 # ───────────────────────────── Clasificador
@@ -294,6 +295,8 @@ FLECHA = {
 }
 
 MAQUETA = {
+    "brazo-robotico": {1: {"anim": "brazo"}},
+    "motor-dc": {1: {"anim": "motor"}},
     "clasificador-color": {
         0: {"anim": "ginebra"},
         1: {"filas": [["funcionamiento"]]},
@@ -338,6 +341,16 @@ for _p in PROYECTOS:
 # ───────────────────────────── Portada de la web
 # Frase con la que cada proyecto se presenta en la página de inicio.
 GANCHOS = {
+    "brazo-robotico": {
+        "es": "El primer objetivo es que coja un objeto y lo deje en las coordenadas que se le indican.",
+        "en": "The first goal is to pick up an object and place it at the coordinates it is given.",
+        "ca": "El primer objectiu és que agafi un objecte i el deixi a les coordenades que se li indiquen.",
+    },
+    "motor-dc": {
+        "es": "Un motor construido desde cero para comprobar en una máquina real lo que el trabajo explica sobre el papel.",
+        "en": "A motor built from scratch to check on a real machine what the report explains on paper.",
+        "ca": "Un motor construït des de zero per comprovar en una màquina real el que el treball explica sobre el paper.",
+    },
     "clasificador-color": {
         "es": "La plataforma avanza 90°, se bloquea y, mientras está quieta, un sensor lee el color de la pieza.",
         "en": "The platform advances 90°, locks and, while it is still, a sensor reads the colour of the part.",
@@ -354,13 +367,16 @@ GANCHOS = {
         "ca": "Dissenyada per suportar 250 N entre suports a 500 mm, amb una fletxa calculada de 13,8 mm.",
     },
 }
-# Cómo se compone cada proyecto destacado en la página de inicio.
-#   forma "a": vídeo o foto a la izquierda · "b": foto con una segunda imagen superpuesta · "c": foto a todo el ancho
+# Cómo se compone cada proyecto en la página de inicio.
+#   forma "a": imagen a la izquierda · "b": imagen a la derecha · "c": foto a todo el ancho
+#   "esquema": dibujo animado para los proyectos que aún no tienen fotos · "video": bucle corto · "extra": segunda imagen
 DESTACADOS = {
+    "brazo-robotico": {"forma": "a", "esquema": "brazo"},
+    "motor-dc": {"forma": "b", "esquema": "motor"},
     "clasificador-color": {"forma": "a", "video": "img/clasificador-color/funcionamiento-corto.mp4"},
+    "viga-impresa": {"forma": "c"},
     "abridor-fem": {"forma": "b", "extra": "img/abridor-fem/fem-traccion.jpg",
                     "extra_alt": {"es": "Tensiones principales de tracción del diseño final en ANSYS.",
                                   "en": "Maximum principal (tensile) stress of the final design in ANSYS.",
                                   "ca": "Tensions principals de tracció del disseny final a ANSYS."}},
-    "viga-impresa": {"forma": "c"},
 }

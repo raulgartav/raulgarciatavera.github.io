@@ -2,14 +2,16 @@
 
 Portfolio de proyectos de Raúl García Tavera (ES / EN / CA): https://raulgartav.github.io
 
+La web solo explica proyectos, del más reciente al más antiguo (el orden está en `ORDEN`). Los datos de currículum no van aquí.
+
 Web estática sin dependencias: un generador en Python escribe el HTML, y el diseño y la interacción están en un CSS y un JS propios.
 
 ## Cómo está organizada
 
 | Qué | Dónde |
 |---|---|
-| Textos de la web y datos de «Sobre mí» | `fuente/contenido.py` |
-| Contenido de cada proyecto, figuras por sección y portada | `fuente/proyectos.py` (`PROYECTOS`, `MAQUETA`, `GANCHOS`, `DESTACADOS`) |
+| Textos de la web | `fuente/contenido.py` |
+| Contenido de cada proyecto, orden, figuras por sección y portada | `fuente/proyectos.py` (`PROYECTOS`, `ORDEN`, `MAQUETA`, `GANCHOS`, `DESTACADOS`) |
 | Plantillas HTML | `fuente/build.py` |
 | Diseño | `assets/estilo.css` |
 | Animaciones e interacción | `assets/sitio.js` |

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-# Contenido de la web. Cada texto tiene versión es / en / ca.
+# Textos de la web. Cada texto tiene versión es / en / ca.
+# La web solo explica proyectos: los datos de currículum están en el CV, no aquí.
 # Para añadir fotos: copiar los archivos en img/<slug>/ y listarlos en "galeria".
 
 SITE = {
@@ -29,14 +30,14 @@ T = {
         "ca": "Estudio quart curs a l'ETSEIB (UPC). M'interessen la robòtica, la mecatrònica i l'automatització, i vull treballar en un departament d'R+D, un equip de disseny o una oficina tècnica. Aquí explico amb detall els projectes que he fet a la carrera i a casa.",
     },
     "intro_hero": {
-        "es": "Estudio cuarto curso en la ETSEIB (UPC). Me interesan la robótica, la mecatrónica y la automatización, y quiero trabajar en un departamento de I+D, un equipo de diseño o una oficina técnica.",
-        "en": "I am a fourth-year student at ETSEIB (UPC). I am interested in robotics, mechatronics and automation, and I want to work in an R&D department, a design team or a technical office.",
-        "ca": "Estudio quart curs a l'ETSEIB (UPC). M'interessen la robòtica, la mecatrònica i l'automatització, i vull treballar en un departament d'R+D, un equip de disseny o una oficina tècnica.",
+        "es": "Aquí explico con detalle los proyectos que hago en la carrera y en casa: qué problema había, qué decisiones tomé y qué resultado dieron.",
+        "en": "This is where I explain in detail the projects I build at university and at home: the problem, the decisions I made and the results.",
+        "ca": "Aquí explico amb detall els projectes que faig a la carrera i a casa: quin problema hi havia, quines decisions vaig prendre i quin resultat van donar.",
     },
     "proy_intro": {
-        "es": "Cada proyecto explica el problema, las decisiones técnicas y el resultado, con fotos, simulaciones y datos de los ensayos.",
-        "en": "Each project explains the problem, the technical decisions and the result, with photos, simulations and test data.",
-        "ca": "Cada projecte explica el problema, les decisions tècniques i el resultat, amb fotos, simulacions i dades dels assaigs.",
+        "es": "Ordenados del más reciente al más antiguo. La web está en construcción: iré añadiendo proyectos a medida que los termine.",
+        "en": "Newest first. This site is a work in progress: I will add projects as I finish them.",
+        "ca": "Ordenats del més recent al més antic. La web està en construcció: aniré afegint projectes a mesura que els acabi.",
     },
     "otros": {"es": "Otros proyectos", "en": "Other projects", "ca": "Altres projectes"},
     "ver": {"es": "Ver el proyecto", "en": "View project", "ca": "Veure el projecte"},
@@ -49,14 +50,24 @@ T = {
     "idiomas_t": {"es": "Idiomas", "en": "Languages", "ca": "Idiomes"},
     "idiomas": {"es": "Inglés C1, español y catalán nativos", "en": "English C1, native Spanish and Catalan", "ca": "Anglès C1, castellà i català natius"},
     "contacto_t": {
-        "es": "Busco prácticas a media jornada desde enero de 2027.",
-        "en": "I am looking for a part-time internship from January 2027.",
-        "ca": "Busco pràctiques a mitja jornada des de gener de 2027.",
+        "es": "¿Quieres más detalle de algún proyecto?",
+        "en": "Want more detail on a project?",
+        "ca": "Vols més detall d'algun projecte?",
     },
     "contacto_p": {
-        "es": "Si mi perfil encaja con tu equipo, escríbeme por LinkedIn.",
-        "en": "If my profile fits your team, message me on LinkedIn.",
-        "ca": "Si el meu perfil encaixa amb el teu equip, escriu-me per LinkedIn.",
+        "es": "Escríbeme por LinkedIn.",
+        "en": "Message me on LinkedIn.",
+        "ca": "Escriu-me per LinkedIn.",
+    },
+    "esq_brazo": {
+        "es": "Esquema: cinco articulaciones en serie, de la base al extremo que coge los objetos.",
+        "en": "Diagram: five joints in series, from the base to the end that picks up objects.",
+        "ca": "Esquema: cinc articulacions en sèrie, de la base a l'extrem que agafa els objectes.",
+    },
+    "esq_motor": {
+        "es": "Esquema del principio: tres bobinas giran entre dos imanes y el conmutador invierte la corriente para mantener el giro.",
+        "en": "Principle diagram: three coils turn between two magnets, and the commutator reverses the current to keep them turning.",
+        "ca": "Esquema del principi: tres bobines giren entre dos imants i el commutador inverteix el corrent per mantenir el gir.",
     },
     "menu": {"es": "Menú", "en": "Menu", "ca": "Menú"},
     "video_alt": {"es": "Vídeo del prototipo en funcionamiento", "en": "Video of the prototype running", "ca": "Vídeo del prototip en funcionament"},
@@ -116,50 +127,6 @@ T = {
     "e404_p": {"es": "Esta página no existe o ha cambiado de sitio.", "en": "This page does not exist or has moved.", "ca": "Aquesta pàgina no existeix o ha canviat de lloc."},
     "inicio": {"es": "Ir al inicio", "en": "Go to home page", "ca": "Vés a l'inici"},
     "otros_idiomas": {"es": "Idioma", "en": "Language", "ca": "Idioma"},
-}
-
-SOBRE = {
-    "formacion": [
-        {
-            "t": {"es": "Grado en Ingeniería en Tecnologías Industriales", "en": "BSc in Industrial Technology Engineering", "ca": "Grau en Enginyeria en Tecnologies Industrials"},
-            "d": {"es": "ETSEIB, Universitat Politècnica de Catalunya · nota media 7,5/10", "en": "ETSEIB, Universitat Politècnica de Catalunya · GPA 7.5/10", "ca": "ETSEIB, Universitat Politècnica de Catalunya · nota mitjana 7,5/10"},
-            "f": "2023 – 2027",
-        },
-    ],
-    "experiencia": [
-        {
-            "t": {"es": "Becario técnico-comercial (HVAC) · Daikin AC Spain", "en": "Technical Sales Engineer Intern (HVAC) · Daikin AC Spain", "ca": "Becari tècnic-comercial (HVAC) · Daikin AC Spain"},
-            "d": {
-                "es": "Departamento Comercial, Barcelona. Preparo soluciones técnicas y ofertas de climatización para instaladores y distribuidores, y atiendo dudas técnicas, de stock y de plazos. Formación interna en VRV, splits, aerotermia y normativa. SAP (ERP y CRM), Excel y software interno de Daikin.",
-                "en": "Sales Department, Barcelona. I prepare technical solutions and HVAC quotations for installers and distributors, and handle technical, stock and lead-time queries. Internal training on VRV, splits, heat pumps and regulations. SAP (ERP and CRM), Excel and Daikin in-house software.",
-                "ca": "Departament Comercial, Barcelona. Preparo solucions tècniques i ofertes de climatització per a instal·ladors i distribuïdors, i atenc dubtes tècnics, d'estoc i de terminis. Formació interna en VRV, splits, aerotèrmia i normativa. SAP (ERP i CRM), Excel i programari intern de Daikin.",
-            },
-            "f": "09/2026 – 01/2027",
-        },
-        {
-            "t": {"es": "Profesor particular", "en": "Private tutor", "ca": "Professor particular"},
-            "d": {
-                "es": "Preparación de la Selectividad en materias técnicas (2.º de Bachillerato) y clases de Cálculo, Física y Expresión Gráfica a una estudiante de primero de Ingeniería.",
-                "en": "University entrance exam preparation in technical subjects, and Calculus, Physics and Technical Drawing lessons for a first-year engineering student.",
-                "ca": "Preparació de la Selectivitat en matèries tècniques (2n de Batxillerat) i classes de Càlcul, Física i Expressió Gràfica a una estudiant de primer d'Enginyeria.",
-            },
-            "f": "2023 –",
-        },
-    ],
-    "certs": [
-        {"t": {"es": "SOLIDWORKS Certified Design Professional (CSWP)", "en": "SOLIDWORKS Certified Design Professional (CSWP)", "ca": "SOLIDWORKS Certified Design Professional (CSWP)"},
-         "d": {"es": "Dassault Systèmes", "en": "Dassault Systèmes", "ca": "Dassault Systèmes"}, "f": "07/2025"},
-        {"t": {"es": "Cambridge C1 Advanced (192)", "en": "Cambridge C1 Advanced (192)", "ca": "Cambridge C1 Advanced (192)"},
-         "d": {"es": "Español y catalán nativos", "en": "Native Spanish and Catalan", "ca": "Castellà i català natius"}, "f": "09/2026"},
-    ],
-    "herramientas": [
-        ("CAD", ["SOLIDWORKS (CSWP)"]),
-        ({"es": "Simulación", "en": "Simulation", "ca": "Simulació"}, ["ANSYS APDL", "SOLIDWORKS Simulation", "FEM"]),
-        ({"es": "Programación", "en": "Programming", "ca": "Programació"}, ["Python", "C++", "Arduino"]),
-        ({"es": "Control", "en": "Control", "ca": "Control"}, ["MATLAB", "Simulink"]),
-        ({"es": "Fabricación", "en": "Manufacturing", "ca": "Fabricació"}, [{"es": "Impresión 3D (FDM)", "en": "3D printing (FDM)", "ca": "Impressió 3D (FDM)"}]),
-        ({"es": "Gestión", "en": "Business", "ca": "Gestió"}, ["SAP ERP / CRM", "Excel"]),
-    ],
 }
 
 from proyectos import PROYECTOS, ORDEN, GANCHOS, DESTACADOS

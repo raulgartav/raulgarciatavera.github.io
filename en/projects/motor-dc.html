@@ -35,7 +35,6 @@
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" hidden>Menu</button>
     <nav class="nav" id="nav" aria-label="Contents">
       <a href="../index.html#proyectos">Projects</a>
-      <a href="../index.html#sobre">About</a>
       <a href="../index.html#contacto">Contact</a>
       <span class="idiomas" role="group" aria-label="Language"><a href="../../proyectos/motor-dc.html" hreflang="es" lang="es">ES</a><a href="motor-dc.html" hreflang="en" lang="en" aria-current="true">EN</a><a href="../../ca/projectes/motor-dc.html" hreflang="ca" lang="ca">CA</a></span>
     </nav>
@@ -60,7 +59,18 @@
     
     <div class="proy-cuerpo">
       <nav class="proy-lat" aria-label="Contents"><h2>Contents</h2><ol class="indice"><li><a href="#s1">Context</a></li><li><a href="#s2">How it is built</a></li><li><a href="#s3">Process</a></li></ol></nav>
-      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">Context</h2><p class="rv">The motor accompanies a university assignment on electric motors that starts from Maxwell&#x27;s equations. I wanted to check on a real machine what the assignment explains on paper.</p></section><section class="psec" id="s2"><h2 class="rv">How it is built</h2><ul class="guiones rv"><li>Two neodymium magnets that create the magnetic field.</li><li>Three coils placed between the magnets.</li><li>A commutator that reverses the current to keep it turning.</li><li>Supports and parts designed in SOLIDWORKS and 3D-printed.</li></ul></section><section class="psec" id="s3"><h2 class="rv">Process</h2><p class="rv">I first tested the principle with a single coil and, once it worked, assembled all three coils and the commutator until the complete motor was running.</p></section></div>
+      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">Context</h2><p class="rv">The motor accompanies a university assignment on electric motors that starts from Maxwell&#x27;s equations. I wanted to check on a real machine what the assignment explains on paper.</p></section><section class="psec" id="s2"><h2 class="rv">How it is built</h2><ul class="guiones rv"><li>Two neodymium magnets that create the magnetic field.</li><li>Three coils placed between the magnets.</li><li>A commutator that reverses the current to keep it turning.</li><li>Supports and parts designed in SOLIDWORKS and 3D-printed.</li></ul><figure class="esq-fig rv"><div class="esq"><svg viewBox="0 0 320 200" role="img" aria-label="Principle diagram: three coils turn between two magnets, and the commutator reverses the current to keep them turning.">
+      <line class="esq-campo" x1="74" y1="68" x2="246" y2="68"/><line class="esq-campo" x1="74" y1="100" x2="246" y2="100"/><line class="esq-campo" x1="74" y1="132" x2="246" y2="132"/>
+      <rect class="esq-solido" x="28" y="50" width="42" height="100" rx="6"/><text class="esq-polo" x="49" y="107" text-anchor="middle">N</text>
+      <rect class="esq-solido" x="250" y="50" width="42" height="100" rx="6"/><text class="esq-polo" x="271" y="107" text-anchor="middle">S</text>
+      <g transform="translate(160 100)"><g class="esq-rotor"><g transform="rotate(0)"><line class="esq-barra" x1="0" y1="-14" x2="0" y2="-56" stroke-width="5"/><rect class="esq-pieza" x="-13" y="-50" width="26" height="22" rx="5"/><line class="esq-barra" x1="-15" y1="-58" x2="15" y2="-58" stroke-width="4"/></g><g transform="rotate(120)"><line class="esq-barra" x1="0" y1="-14" x2="0" y2="-56" stroke-width="5"/><rect class="esq-pieza" x="-13" y="-50" width="26" height="22" rx="5"/><line class="esq-barra" x1="-15" y1="-58" x2="15" y2="-58" stroke-width="4"/></g><g transform="rotate(240)"><line class="esq-barra" x1="0" y1="-14" x2="0" y2="-56" stroke-width="5"/><rect class="esq-pieza" x="-13" y="-50" width="26" height="22" rx="5"/><line class="esq-barra" x1="-15" y1="-58" x2="15" y2="-58" stroke-width="4"/></g>
+        <circle class="esq-conm" r="11"/>
+      </g>
+        <path class="esq-cable" d="M0 -17V-84M0 17V84"/>
+        <rect class="esq-cuerpo" x="-5" y="-24" width="10" height="11" rx="2"/><rect class="esq-cuerpo" x="-5" y="13" width="10" height="11" rx="2"/>
+        <text class="esq-signo" x="12" y="-76">+</text><text class="esq-signo" x="12" y="86">−</text>
+      </g>
+    </svg></div><figcaption>Principle diagram: three coils turn between two magnets, and the commutator reverses the current to keep them turning.</figcaption></figure></section><section class="psec" id="s3"><h2 class="rv">Process</h2><p class="rv">I first tested the principle with a single coil and, once it worked, assembled all three coils and the commutator until the complete motor was running.</p></section></div>
     </div>
     
   </div>

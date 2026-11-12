@@ -35,7 +35,6 @@
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" hidden>Menú</button>
     <nav class="nav" id="nav" aria-label="Contenido">
       <a href="../index.html#proyectos">Proyectos</a>
-      <a href="../index.html#sobre">Sobre mí</a>
       <a href="../index.html#contacto">Contacto</a>
       <span class="idiomas" role="group" aria-label="Idioma"><a href="brazo-robotico.html" hreflang="es" lang="es" aria-current="true">ES</a><a href="../en/projects/brazo-robotico.html" hreflang="en" lang="en">EN</a><a href="../ca/projectes/brazo-robotico.html" hreflang="ca" lang="ca">CA</a></span>
     </nav>
@@ -60,7 +59,26 @@
     
     <div class="proy-cuerpo">
       <nav class="proy-lat" aria-label="Contenido"><h2>Contenido</h2><ol class="indice"><li><a href="#s1">Objetivo</a></li><li><a href="#s2">Cómo está hecho</a></li><li><a href="#s3">Próximos pasos</a></li></ol></nav>
-      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">Objetivo</h2><p class="rv">Construir un brazo de cinco grados de libertad que, a partir de una posición en coordenadas, mueva cada articulación para coger un objeto y dejarlo en otro punto. He elegido un camino de bajo coste para poder iterar rápido. Si funciona bien, mejoraré los componentes.</p></section><section class="psec" id="s2"><h2 class="rv">Cómo está hecho</h2><ul class="guiones rv"><li>Estructura de piezas impresas en 3D con una Bambu Lab A1.</li><li>Cinco articulaciones movidas por servos de modelismo.</li><li>Control con un Arduino UNO.</li></ul></section><section class="psec" id="s3"><h2 class="rv">Próximos pasos</h2><p class="rv">Cuando el brazo coloque objetos de forma fiable, quiero añadirle visión artificial para que localice los objetos por sí mismo en lugar de recibir sus coordenadas.</p></section></div>
+      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">Objetivo</h2><p class="rv">Construir un brazo de cinco grados de libertad que, a partir de una posición en coordenadas, mueva cada articulación para coger un objeto y dejarlo en otro punto. He elegido un camino de bajo coste para poder iterar rápido. Si funciona bien, mejoraré los componentes.</p></section><section class="psec" id="s2"><h2 class="rv">Cómo está hecho</h2><ul class="guiones rv"><li>Estructura de piezas impresas en 3D con una Bambu Lab A1.</li><li>Cinco articulaciones movidas por servos de modelismo.</li><li>Control con un Arduino UNO.</li></ul><figure class="esq-fig rv"><div class="esq"><svg viewBox="44 52 232 136" role="img" aria-label="Esquema: cinco articulaciones en serie, de la base al extremo que coge los objetos.">
+      <line class="esq-suelo" x1="52" y1="178" x2="268" y2="178"/>
+      <rect class="esq-pieza" x="206" y="162" width="16" height="16" rx="2"/>
+      <rect class="esq-solido" x="70" y="160" width="60" height="18" rx="4"/>
+      <rect class="esq-cuerpo" x="84" y="149" width="32" height="11" rx="3"/>
+      <g transform="translate(100 149) rotate(35)"><g class="esq-j2">
+        <line class="esq-barra" x1="0" y1="0" x2="0" y2="-62" stroke-width="9"/>
+        <g transform="translate(0 -62) rotate(70)"><g class="esq-j3">
+          <line class="esq-barra" x1="0" y1="0" x2="0" y2="-54" stroke-width="8"/>
+          <g transform="translate(0 -54) rotate(40)"><g class="esq-j4">
+            <line class="esq-barra" x1="0" y1="0" x2="0" y2="-26" stroke-width="7"/>
+            <rect class="esq-pieza" x="-6.5" y="-19" width="13" height="7" rx="2"/>
+            <path class="esq-pinza" d="M-9 -26H9M-7 -26v-12M7 -26v-12"/>
+            <circle class="esq-eje" r="6.5"/>
+          </g></g>
+          <circle class="esq-eje" r="7"/>
+        </g></g>
+        <circle class="esq-eje" r="7.5"/>
+      </g></g>
+    </svg></div><figcaption>Esquema: cinco articulaciones en serie, de la base al extremo que coge los objetos.</figcaption></figure></section><section class="psec" id="s3"><h2 class="rv">Próximos pasos</h2><p class="rv">Cuando el brazo coloque objetos de forma fiable, quiero añadirle visión artificial para que localice los objetos por sí mismo en lugar de recibir sus coordenadas.</p></section></div>
     </div>
     
   </div>

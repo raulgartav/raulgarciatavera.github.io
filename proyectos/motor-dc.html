@@ -35,7 +35,6 @@
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" hidden>Menú</button>
     <nav class="nav" id="nav" aria-label="Contenido">
       <a href="../index.html#proyectos">Proyectos</a>
-      <a href="../index.html#sobre">Sobre mí</a>
       <a href="../index.html#contacto">Contacto</a>
       <span class="idiomas" role="group" aria-label="Idioma"><a href="motor-dc.html" hreflang="es" lang="es" aria-current="true">ES</a><a href="../en/projects/motor-dc.html" hreflang="en" lang="en">EN</a><a href="../ca/projectes/motor-dc.html" hreflang="ca" lang="ca">CA</a></span>
     </nav>
@@ -60,7 +59,18 @@
     
     <div class="proy-cuerpo">
       <nav class="proy-lat" aria-label="Contenido"><h2>Contenido</h2><ol class="indice"><li><a href="#s1">Contexto</a></li><li><a href="#s2">Cómo está hecho</a></li><li><a href="#s3">Proceso</a></li></ol></nav>
-      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">Contexto</h2><p class="rv">El motor acompaña un trabajo universitario sobre motores eléctricos que parte de las ecuaciones de Maxwell. Quería comprobar en una máquina real lo que el trabajo explica sobre el papel.</p></section><section class="psec" id="s2"><h2 class="rv">Cómo está hecho</h2><ul class="guiones rv"><li>Dos imanes de neodimio que crean el campo magnético.</li><li>Tres bobinas situadas entre los imanes.</li><li>Conmutador que invierte la corriente para mantener el giro.</li><li>Soportes y piezas diseñados en SOLIDWORKS e impresos en 3D.</li></ul></section><section class="psec" id="s3"><h2 class="rv">Proceso</h2><p class="rv">Primero probé el principio con una sola bobina y, cuando funcionó, monté las tres y el conmutador hasta tener el motor completo girando.</p></section></div>
+      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">Contexto</h2><p class="rv">El motor acompaña un trabajo universitario sobre motores eléctricos que parte de las ecuaciones de Maxwell. Quería comprobar en una máquina real lo que el trabajo explica sobre el papel.</p></section><section class="psec" id="s2"><h2 class="rv">Cómo está hecho</h2><ul class="guiones rv"><li>Dos imanes de neodimio que crean el campo magnético.</li><li>Tres bobinas situadas entre los imanes.</li><li>Conmutador que invierte la corriente para mantener el giro.</li><li>Soportes y piezas diseñados en SOLIDWORKS e impresos en 3D.</li></ul><figure class="esq-fig rv"><div class="esq"><svg viewBox="0 0 320 200" role="img" aria-label="Esquema del principio: tres bobinas giran entre dos imanes y el conmutador invierte la corriente para mantener el giro.">
+      <line class="esq-campo" x1="74" y1="68" x2="246" y2="68"/><line class="esq-campo" x1="74" y1="100" x2="246" y2="100"/><line class="esq-campo" x1="74" y1="132" x2="246" y2="132"/>
+      <rect class="esq-solido" x="28" y="50" width="42" height="100" rx="6"/><text class="esq-polo" x="49" y="107" text-anchor="middle">N</text>
+      <rect class="esq-solido" x="250" y="50" width="42" height="100" rx="6"/><text class="esq-polo" x="271" y="107" text-anchor="middle">S</text>
+      <g transform="translate(160 100)"><g class="esq-rotor"><g transform="rotate(0)"><line class="esq-barra" x1="0" y1="-14" x2="0" y2="-56" stroke-width="5"/><rect class="esq-pieza" x="-13" y="-50" width="26" height="22" rx="5"/><line class="esq-barra" x1="-15" y1="-58" x2="15" y2="-58" stroke-width="4"/></g><g transform="rotate(120)"><line class="esq-barra" x1="0" y1="-14" x2="0" y2="-56" stroke-width="5"/><rect class="esq-pieza" x="-13" y="-50" width="26" height="22" rx="5"/><line class="esq-barra" x1="-15" y1="-58" x2="15" y2="-58" stroke-width="4"/></g><g transform="rotate(240)"><line class="esq-barra" x1="0" y1="-14" x2="0" y2="-56" stroke-width="5"/><rect class="esq-pieza" x="-13" y="-50" width="26" height="22" rx="5"/><line class="esq-barra" x1="-15" y1="-58" x2="15" y2="-58" stroke-width="4"/></g>
+        <circle class="esq-conm" r="11"/>
+      </g>
+        <path class="esq-cable" d="M0 -17V-84M0 17V84"/>
+        <rect class="esq-cuerpo" x="-5" y="-24" width="10" height="11" rx="2"/><rect class="esq-cuerpo" x="-5" y="13" width="10" height="11" rx="2"/>
+        <text class="esq-signo" x="12" y="-76">+</text><text class="esq-signo" x="12" y="86">−</text>
+      </g>
+    </svg></div><figcaption>Esquema del principio: tres bobinas giran entre dos imanes y el conmutador invierte la corriente para mantener el giro.</figcaption></figure></section><section class="psec" id="s3"><h2 class="rv">Proceso</h2><p class="rv">Primero probé el principio con una sola bobina y, cuando funcionó, monté las tres y el conmutador hasta tener el motor completo girando.</p></section></div>
     </div>
     
   </div>

@@ -4,7 +4,7 @@ Uso:  python3 fuente/build.py      (desde la raíz del repositorio)
 Requiere Pillow (lee el tamaño de las imágenes y genera sus versiones WebP).
 
 Estructura:
-  contenido.py   textos de la web y datos de "Sobre mí"
+  contenido.py   textos de la web
   proyectos.py   contenido de cada proyecto y su maquetación
   build.py       plantillas HTML (este archivo)
   ../assets/     estilo.css, sitio.js, fuentes
@@ -13,7 +13,7 @@ import os, html, sys, json, math
 from urllib.parse import urlparse, quote
 from PIL import Image
 sys.path.insert(0, os.path.dirname(__file__))
-from contenido import SITE, T, SOBRE, PROYECTOS, GANCHOS, DESTACADOS
+from contenido import SITE, T, PROYECTOS, GANCHOS, DESTACADOS
 
 RAIZ = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 LANGS = ["es", "en", "ca"]
@@ -229,6 +229,64 @@ def ginebra_hero(l, href):
     </figure>"""
 
 
+# ───────────────────────────── Esquemas de los proyectos que aún no tienen fotos
+
+def _esq_brazo():
+    """Cinco articulaciones en serie: giro de la base, hombro, codo, muñeca y giro del extremo."""
+    return """<svg viewBox="44 52 232 136" role="img" aria-label="{alt}">
+      <line class="esq-suelo" x1="52" y1="178" x2="268" y2="178"/>
+      <rect class="esq-pieza" x="206" y="162" width="16" height="16" rx="2"/>
+      <rect class="esq-solido" x="70" y="160" width="60" height="18" rx="4"/>
+      <rect class="esq-cuerpo" x="84" y="149" width="32" height="11" rx="3"/>
+      <g transform="translate(100 149) rotate(35)"><g class="esq-j2">
+        <line class="esq-barra" x1="0" y1="0" x2="0" y2="-62" stroke-width="9"/>
+        <g transform="translate(0 -62) rotate(70)"><g class="esq-j3">
+          <line class="esq-barra" x1="0" y1="0" x2="0" y2="-54" stroke-width="8"/>
+          <g transform="translate(0 -54) rotate(40)"><g class="esq-j4">
+            <line class="esq-barra" x1="0" y1="0" x2="0" y2="-26" stroke-width="7"/>
+            <rect class="esq-pieza" x="-6.5" y="-19" width="13" height="7" rx="2"/>
+            <path class="esq-pinza" d="M-9 -26H9M-7 -26v-12M7 -26v-12"/>
+            <circle class="esq-eje" r="6.5"/>
+          </g></g>
+          <circle class="esq-eje" r="7"/>
+        </g></g>
+        <circle class="esq-eje" r="7.5"/>
+      </g></g>
+    </svg>"""
+
+
+def _esq_motor():
+    """Tres bobinas a 120° entre dos imanes, con el conmutador en el eje."""
+    polos = "".join(
+        f'<g transform="rotate({a})"><line class="esq-barra" x1="0" y1="-14" x2="0" y2="-56" stroke-width="5"/>'
+        f'<rect class="esq-pieza" x="-13" y="-50" width="26" height="22" rx="5"/>'
+        f'<line class="esq-barra" x1="-15" y1="-58" x2="15" y2="-58" stroke-width="4"/></g>' for a in (0, 120, 240))
+    return f"""<svg viewBox="0 0 320 200" role="img" aria-label="{{alt}}">
+      <line class="esq-campo" x1="74" y1="68" x2="246" y2="68"/><line class="esq-campo" x1="74" y1="100" x2="246" y2="100"/><line class="esq-campo" x1="74" y1="132" x2="246" y2="132"/>
+      <rect class="esq-solido" x="28" y="50" width="42" height="100" rx="6"/><text class="esq-polo" x="49" y="107" text-anchor="middle">N</text>
+      <rect class="esq-solido" x="250" y="50" width="42" height="100" rx="6"/><text class="esq-polo" x="271" y="107" text-anchor="middle">S</text>
+      <g transform="translate(160 100)"><g class="esq-rotor">{polos}
+        <circle class="esq-conm" r="11"/>
+      </g>
+        <path class="esq-cable" d="M0 -17V-84M0 17V84"/>
+        <rect class="esq-cuerpo" x="-5" y="-24" width="10" height="11" rx="2"/><rect class="esq-cuerpo" x="-5" y="13" width="10" height="11" rx="2"/>
+        <text class="esq-signo" x="12" y="-76">+</text><text class="esq-signo" x="12" y="86">−</text>
+      </g>
+    </svg>"""
+
+
+ESQUEMAS = {"brazo": _esq_brazo, "motor": _esq_motor}
+
+
+def esquema(tipo, l):
+    return ESQUEMAS[tipo]().replace("{alt}", e(T["esq_" + tipo][l]))
+
+
+def esquema_figura(tipo, l):
+    return (f'<figure class="esq-fig rv"><div class="esq">{esquema(tipo, l)}</div>'
+            f'<figcaption>{e(T["esq_" + tipo][l])}</figcaption></figure>')
+
+
 # ───────────────────────────── Plantilla de página
 
 def pagina(l, ruta, titulo, descripcion, cuerpo, alternos, og_img=None, extra_head="", clase=""):
@@ -276,7 +334,6 @@ def pagina(l, ruta, titulo, descripcion, cuerpo, alternos, og_img=None, extra_he
     <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" hidden>{e(T['menu'][l])}</button>
     <nav class="nav" id="nav" aria-label="{e(T['contenido'][l])}">
       <a href="{home}#proyectos">{e(T['proyectos'][l])}</a>
-      <a href="{home}#sobre">{e(T['sobre'][l])}</a>
       <a href="{home}#contacto">{e(T['contacto'][l])}</a>
       <span class="idiomas" role="group" aria-label="{e(T['otros_idiomas'][l])}">{idiomas}</span>
     </nav>
@@ -364,67 +421,43 @@ def meta_obra(p, l):
     return f'{e(tx(p["tipo"], l))} · {e(tx(p["periodo"], l))}'
 
 
-def obra(p, l, ruta, primera):
-    """Proyecto destacado de la portada. Cada uno tiene su propia composición."""
+def obra(p, l, ruta):
+    """Un proyecto en la portada. Cada uno tiene su propia composición."""
     d = DESTACADOS[p["slug"]]
     href = rel(ruta, path_proy(l, p["slug"]))
     titulo = tx(p["titulo"], l)
     vt = f' style="view-transition-name:foto-{p["slug"]}"'
-    sizes = "(min-width: 1000px) 1160px, 92vw" if d["forma"] == "c" else "(min-width: 1000px) 680px, 92vw"
-    foto = pic(p["portada"], titulo, ruta, sizes, lazy=not primera)
-    if d.get("video"):
+    if d.get("esquema"):
+        media = f'<div class="obra-foto esq">{esquema(d["esquema"], l)}</div>'
+    elif d.get("video"):
         w, h = tam(p["portada"])
         media = (f'<div class="obra-foto"{vt}><video class="obra-video" muted loop playsinline preload="none" width="{w}" height="{h}" '
                  f'poster="{rel(ruta, p["portada"])}" aria-label="{e(T["video_alt"][l])}" data-auto>'
                  f'<source src="{rel(ruta, d["video"])}" type="video/mp4"></video>'
                  f'<button type="button" class="video-btn" hidden>{e(T["pausa"][l])}</button></div>')
     else:
-        media = f'<div class="obra-foto"{vt}>{foto}</div>'
+        sizes = "(min-width: 1000px) 1160px, 92vw" if d["forma"] == "c" else "(min-width: 1000px) 680px, 92vw"
+        media = f'<div class="obra-foto"{vt}>{pic(p["portada"], titulo, ruta, sizes)}</div>'
     if d.get("extra"):
         media += f'<div class="obra-extra">{pic(d["extra"], tx(d["extra_alt"], l), ruta, "(min-width: 1000px) 300px, 40vw")}</div>'
+    estado = chip_estado(p, l) if p["estado"] == "en_curso" else ""
+    datos = cifras(p, l, "obra-cifras", 3) or f'<ul class="tags obra-tags">{etiquetas(p, l)}</ul>'
     return f"""<article class="obra obra-{d['forma']}">
     <div class="obra-media rv-foto">{media}</div>
     <div class="obra-txt rv">
-      <p class="obra-meta">{meta_obra(p, l)}</p>
+      <p class="obra-meta">{meta_obra(p, l)}{estado}</p>
       <h3><a href="{href}">{e(titulo)}</a></h3>
       <p class="obra-gancho">{e(GANCHOS[p['slug']][l])}</p>
-      {cifras(p, l, "obra-cifras", 3)}
+      {datos}
       <span class="ver" aria-hidden="true">{e(T['ver'][l])}{ICONO['flecha']}</span>
     </div>
   </article>"""
 
 
-def otro(p, l, ruta):
-    href = rel(ruta, path_proy(l, p["slug"]))
-    return f"""<li class="otro rv">
-      <p class="obra-meta">{e(tx(p['tipo'], l))}{chip_estado(p, l)}</p>
-      <h3><a href="{href}">{e(tx(p['titulo'], l))}</a></h3>
-      <p>{e(tx(p['resumen'], l))}</p>
-      <ul class="tags">{etiquetas(p, l)}</ul>
-      <span class="ver" aria-hidden="true">{e(T['ver'][l])}{ICONO['flecha']}</span>
-    </li>"""
-
-
-def fila_cv(titulo, items, l):
-    filas = "".join(
-        f'<li><span class="cv-f">{e(it["f"])}</span><div><h4>{e(tx(it["t"], l))}</h4><p>{e(tx(it["d"], l))}</p></div></li>'
-        for it in items)
-    return f'<div class="cv-fila rv"><h3>{e(titulo)}</h3><ol class="cv-l">{filas}</ol></div>'
-
-
 def home(l):
     ruta = path_home(l)
     alternos = {x: path_home(x) for x in LANGS}
-    con_foto = [p for p in PROYECTOS if p["slug"] in DESTACADOS and p.get("portada")]
-    resto = [p for p in PROYECTOS if p not in con_foto]
-    obras = "\n  ".join(obra(p, l, ruta, i == 0) for i, p in enumerate(con_foto))
-    otros = "".join(otro(p, l, ruta) for p in resto)
-    herr = "".join(
-        f'<div><dt>{e(tx(cat, l))}</dt><dd>{", ".join(e(tx(x, l)) for x in items)}</dd></div>'
-        for cat, items in SOBRE["herramientas"])
-    cv_boton = ""
-    if SITE["cv"].get(l):
-        cv_boton = f'<a class="btn" href="{rel(ruta, SITE["cv"][l])}" download>{e(T["descargar_cv"][l])}</a>'
+    obras = "\n  ".join(obra(p, l, ruta) for p in PROYECTOS)
     correo = ""
     if SITE["email"]:
         correo = f'<li><a href="mailto:{e(SITE["email"])}">{e(SITE["email"])}</a></li>'
@@ -436,19 +469,11 @@ def home(l):
       <h1>{palabras(T['lema'][l])}</h1>
       <p class="hero-intro">{e(T['intro_hero'][l])}</p>
       <div class="acciones">
-        <a class="btn btn-p" href="#proyectos">{e(T['ver_proy'][l])}{ICONO['abajo']}</a>{cv_boton}
-        <a class="btn" href="{SITE['linkedin']}" rel="me">LinkedIn{ICONO['fuera']}</a>
-        <a class="btn" href="{SITE['github']}" rel="me">GitHub{ICONO['fuera']}</a>
+        <a class="btn btn-p" href="#proyectos">{e(T['ver_proy'][l])}{ICONO['abajo']}</a>
       </div>
     </div>
     {ginebra_hero(l, rel(ruta, path_proy(l, 'clasificador-color')))}
   </div>
-  <dl class="ancho hero-datos">
-    <div><dt>{e(T['disp_t'][l])}</dt><dd>{e(T['disp'][l])}</dd></div>
-    <div><dt>{e(T['zona_t'][l])}</dt><dd>{e(T['zona'][l])}</dd></div>
-    <div><dt>{e(T['cert_t'][l])}</dt><dd>SOLIDWORKS CSWP</dd></div>
-    <div><dt>{e(T['idiomas_t'][l])}</dt><dd>{e(T['idiomas'][l])}</dd></div>
-  </dl>
 </section>
 
 <section class="ancho bloque" id="proyectos">
@@ -457,27 +482,13 @@ def home(l):
     <p>{e(T['proy_intro'][l])}</p>
   </header>
   {obras}
-  <div class="otros">
-    <h2 class="otros-t rv">{e(T['otros'][l])}</h2>
-    <ul class="otros-l">{otros}</ul>
-  </div>
-</section>
-
-<section class="ancho bloque sobre" id="sobre">
-  <h2 class="rv">{e(T['sobre'][l])}</h2>
-  <div class="sobre-c">
-    {fila_cv(T['formacion'][l], SOBRE['formacion'], l)}
-    {fila_cv(T['experiencia'][l], SOBRE['experiencia'], l)}
-    {fila_cv(T['certs'][l], SOBRE['certs'], l)}
-    <div class="cv-fila rv"><h3>{e(T['herramientas'][l])}</h3><dl class="herr">{herr}</dl></div>
-  </div>
 </section>
 
 <section class="contacto" id="contacto">
   <div class="ancho contacto-in rv">
     <h2>{e(T['contacto_t'][l])}</h2>
     <div class="contacto-c">
-      <p>{e(T['contacto_p'][l])} {e(T['zona'][l])}.</p>
+      <p>{e(T['contacto_p'][l])}</p>
       <ul class="contacto-l">
         <li><a href="{SITE['linkedin']}" rel="me">LinkedIn{ICONO['fuera']}</a></li>
         <li><a href="{SITE['github']}" rel="me">GitHub{ICONO['fuera']}</a></li>{correo}
@@ -489,12 +500,11 @@ def home(l):
     titulo = f"{SITE['nombre']} · {T['lema'][l].rstrip('.')}"
     persona = {
         "@context": "https://schema.org", "@type": "Person", "name": SITE["nombre"], "url": SITE_URL,
-        "jobTitle": T["titular"][l], "sameAs": [SITE["linkedin"], SITE["github"]],
-        "alumniOf": {"@type": "CollegeOrUniversity", "name": "ETSEIB, Universitat Politècnica de Catalunya"},
+        "sameAs": [SITE["linkedin"], SITE["github"]],
         "knowsAbout": ["Mechanical design", "SOLIDWORKS", "Finite element analysis", "Robotics", "Automation"],
     }
     extra = f'<script type="application/ld+json">{json.dumps(persona, ensure_ascii=False)}</script>\n'
-    return ruta, pagina(l, ruta, titulo, T["intro"][l], cuerpo, alternos, extra_head=extra, clase="inicio")
+    return ruta, pagina(l, ruta, titulo, T["intro_hero"][l], cuerpo, alternos, extra_head=extra, clase="inicio")
 
 
 # ───────────────────────────── Página de proyecto
@@ -507,6 +517,8 @@ def seccion(s, i, l, ruta):
         partes.append('<ul class="guiones rv">' + "".join(f"<li>{e(x)}</li>" for x in s["l"][l]) + "</ul>")
     if s.get("anim") == "ginebra":
         partes.append(ginebra_figura(l))
+    elif s.get("anim") in ESQUEMAS:
+        partes.append(esquema_figura(s["anim"], l))
     for fila in s.get("filas", []):
         partes.append(fila_figuras(fila, l, ruta))
     if s.get("barras"):
