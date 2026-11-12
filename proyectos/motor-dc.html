@@ -19,19 +19,21 @@
 <meta property="og:image" content="https://raulgartav.github.io/assets/og.png">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#f4f6f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c1322" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c3faa'/%3E%3Cpath d='M6 26V6h20v20z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='12' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="../assets/fuentes/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../assets/fuentes/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%27-84%20-84%20168%20168%27%3E%3Cpath%20fill%3D%27%23d0282e%27%20d%3D%27M70.53%205.00%20A70.71%2070.71%200%200%201%2068.17%2018.77%20A52.00%2052.00%200%200%200%2018.77%2068.17%20A70.71%2070.71%200%200%201%205.00%2070.53%20L5.00%2029.29%20A5.00%205.00%200%200%200%20-5.00%2029.29%20L-5.00%2070.53%20A70.71%2070.71%200%200%201%20-18.77%2068.17%20A52.00%2052.00%200%200%200%20-68.17%2018.77%20A70.71%2070.71%200%200%201%20-70.53%205.00%20L-29.29%205.00%20A5.00%205.00%200%200%200%20-29.29%20-5.00%20L-70.53%20-5.00%20A70.71%2070.71%200%200%201%20-68.17%20-18.77%20A52.00%2052.00%200%200%200%20-18.77%20-68.17%20A70.71%2070.71%200%200%201%20-5.00%20-70.53%20L-5.00%20-29.29%20A5.00%205.00%200%200%200%205.00%20-29.29%20L5.00%20-70.53%20A70.71%2070.71%200%200%201%2018.77%20-68.17%20A52.00%2052.00%200%200%200%2068.17%20-18.77%20A70.71%2070.71%200%200%201%2070.53%20-5.00%20L29.29%20-5.00%20A5.00%205.00%200%200%200%2029.29%205.00%20L70.53%205.00Z%27/%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fuentes/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/estilo.css">
+<script>document.documentElement.classList.add("js");window.TXT={"cerrar": "Cerrar", "anterior": "Anterior", "posterior": "Siguiente", "pausa": "Pausar", "reproducir": "Reproducir"}</script>
+<script src="../assets/sitio.js" defer></script>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 <header class="barra">
-  <div class="barra-in">
-    <a class="marca" href="../index.html" aria-label="Raúl García Tavera"><span class="marca-c" aria-hidden="true">RG</span><span class="marca-n">Raúl García Tavera</span></a>
-    <nav class="nav" aria-label="Contenido">
+  <div class="ancho barra-in">
+    <a class="marca" href="../index.html"><svg class="marca-i" viewBox="-72 -72 144 144" aria-hidden="true"><path d="M70.53 5.00 A70.71 70.71 0 0 1 68.17 18.77 A52.00 52.00 0 0 0 18.77 68.17 A70.71 70.71 0 0 1 5.00 70.53 L5.00 29.29 A5.00 5.00 0 0 0 -5.00 29.29 L-5.00 70.53 A70.71 70.71 0 0 1 -18.77 68.17 A52.00 52.00 0 0 0 -68.17 18.77 A70.71 70.71 0 0 1 -70.53 5.00 L-29.29 5.00 A5.00 5.00 0 0 0 -29.29 -5.00 L-70.53 -5.00 A70.71 70.71 0 0 1 -68.17 -18.77 A52.00 52.00 0 0 0 -18.77 -68.17 A70.71 70.71 0 0 1 -5.00 -70.53 L-5.00 -29.29 A5.00 5.00 0 0 0 5.00 -29.29 L5.00 -70.53 A70.71 70.71 0 0 1 18.77 -68.17 A52.00 52.00 0 0 0 68.17 -18.77 A70.71 70.71 0 0 1 70.53 -5.00 L29.29 -5.00 A5.00 5.00 0 0 0 29.29 5.00 L70.53 5.00Z"/></svg><span>Raúl García Tavera</span></a>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" hidden>Menú</button>
+    <nav class="nav" id="nav" aria-label="Contenido">
       <a href="../index.html#proyectos">Proyectos</a>
       <a href="../index.html#sobre">Sobre mí</a>
       <a href="../index.html#contacto">Contacto</a>
@@ -39,40 +41,42 @@
     </nav>
   </div>
 </header>
-<main class="envoltura proy" id="contenido">
-  <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> Todos los proyectos</a>
-  <header class="proy-cab">
-    <div class="proy-tit">
-      <p class="eyebrow">REF. 05 · Parte práctica de un trabajo universitario</p>
-      <h1>Motor de corriente continua casero</h1>
-      <p class="lema">Motor de corriente continua construido desde cero con dos imanes de neodimio, tres bobinas y un conmutador. Las piezas están diseñadas en SOLIDWORKS e impresas en 3D. Es la parte práctica de un trabajo sobre motores eléctricos.</p>
-    </div>
-    <dl class="cajetin">
+<div class="progreso" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+<main class="proy" id="contenido">
+  <header class="ancho proy-cab">
+    <a class="volver" href="../index.html#proyectos"><svg class="ico ico-izq" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Todos los proyectos</a>
+    <p class="obra-meta">Parte práctica de un trabajo universitario</p>
+    <h1>Motor de corriente continua casero</h1>
+    <p class="proy-lema">Motor de corriente continua construido desde cero con dos imanes de neodimio, tres bobinas y un conmutador. Las piezas están diseñadas en SOLIDWORKS e impresas en 3D. Es la parte práctica de un trabajo sobre motores eléctricos.</p>
+  </header>
+  
+  <div class="ancho">
+    <dl class="ficha ficha-sola">
       <div><dt>Periodo</dt><dd>2026</dd></div>
       <div><dt>Mi papel</dt><dd>Diseño, fabricación y pruebas</dd></div>
       <div><dt>Estado</dt><dd><span class="estado estado-acabado">Terminado</span></dd></div>
-      <div><dt>Herramientas</dt><dd><ul class="tags"><li>SOLIDWORKS</li><li>Impresión 3D</li><li>Electromagnetismo</li></ul></dd></div>
+      <div class="ficha-herr"><dt>Herramientas</dt><dd><ul class="tags"><li>SOLIDWORKS</li><li>Impresión 3D</li><li>Electromagnetismo</li></ul></dd></div>
     </dl>
-  </header>
-  <div class="portada portada-g" aria-hidden="true"><span class="portada-ref">05</span><span class="portada-cota"></span><span class="portada-caj"><b>REF. 05</b><i>SOLIDWORKS</i></span></div>
-  
-  <div class="proy-cuerpo">
-    <nav class="proy-lat" aria-label="Contenido"><h2 class="mini">Contenido</h2><ol class="indice"><li><a href="#s1">Contexto</a></li><li><a href="#s2">Cómo está hecho</a></li><li><a href="#s3">Proceso</a></li></ol></nav>
-    <div class="proy-txt"><section class="psec" id="s1"><h2>Contexto</h2><p>El motor acompaña un trabajo universitario sobre motores eléctricos que parte de las ecuaciones de Maxwell. Quería comprobar en una máquina real lo que el trabajo explica sobre el papel.</p></section><section class="psec" id="s2"><h2>Cómo está hecho</h2><ul class="guiones"><li>Dos imanes de neodimio que crean el campo magnético.</li><li>Tres bobinas situadas entre los imanes.</li><li>Conmutador que invierte la corriente para mantener el giro.</li><li>Soportes y piezas diseñados en SOLIDWORKS e impresos en 3D.</li></ul></section><section class="psec" id="s3"><h2>Proceso</h2><p>Primero probé el principio con una sola bobina y, cuando funcionó, monté las tres y el conmutador hasta tener el motor completo girando.</p></section></div>
+    
+    <div class="proy-cuerpo">
+      <nav class="proy-lat" aria-label="Contenido"><h2>Contenido</h2><ol class="indice"><li><a href="#s1">Contexto</a></li><li><a href="#s2">Cómo está hecho</a></li><li><a href="#s3">Proceso</a></li></ol></nav>
+      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">Contexto</h2><p class="rv">El motor acompaña un trabajo universitario sobre motores eléctricos que parte de las ecuaciones de Maxwell. Quería comprobar en una máquina real lo que el trabajo explica sobre el papel.</p></section><section class="psec" id="s2"><h2 class="rv">Cómo está hecho</h2><ul class="guiones rv"><li>Dos imanes de neodimio que crean el campo magnético.</li><li>Tres bobinas situadas entre los imanes.</li><li>Conmutador que invierte la corriente para mantener el giro.</li><li>Soportes y piezas diseñados en SOLIDWORKS e impresos en 3D.</li></ul></section><section class="psec" id="s3"><h2 class="rv">Proceso</h2><p class="rv">Primero probé el principio con una sola bobina y, cuando funcionó, monté las tres y el conmutador hasta tener el motor completo girando.</p></section></div>
+    </div>
+    
   </div>
-  
   <a class="siguiente" href="clasificador-color.html">
-    <span class="mini">Siguiente proyecto · REF. 01</span>
-    <span class="sig-t">Clasificador automático por colores con Cruz de Malta <span aria-hidden="true">→</span></span>
+    <span class="ancho siguiente-in">
+      <span class="siguiente-k">Siguiente proyecto</span>
+      <span class="siguiente-t">Clasificador automático por colores con Cruz de Malta<svg class="ico ico-der" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </span>
   </a>
 </main>
 <footer class="pie">
-  <div class="envoltura pie-in">
+  <div class="ancho pie-in">
     <span>© 2026 Raúl García Tavera</span>
     <span>Se actualiza con cada proyecto nuevo.</span>
+    <span class="pie-enl"><a href="https://www.linkedin.com/in/raulgarciatavera/" rel="me">LinkedIn</a><a href="https://github.com/raulgartav" rel="me">GitHub</a></span>
   </div>
 </footer>
-<script>window.TXT={"cerrar": "Cerrar", "anterior": "Anterior", "posterior": "Siguiente", "pausa": "Pausar", "reproducir": "Reproducir"}</script>
-<script src="../assets/sitio.js" defer></script>
 </body>
 </html>

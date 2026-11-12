@@ -333,3 +333,34 @@ for _p in PROYECTOS:
             if _k in _m:
                 _s[_k] = _m[_k]
     _p["galeria"] = [g for g in _p["galeria"] if _clave(g) not in _usadas]
+
+
+# ───────────────────────────── Portada de la web
+# Frase con la que cada proyecto se presenta en la página de inicio.
+GANCHOS = {
+    "clasificador-color": {
+        "es": "La plataforma avanza 90°, se bloquea y, mientras está quieta, un sensor lee el color de la pieza.",
+        "en": "The platform advances 90°, locks and, while it is still, a sensor reads the colour of the part.",
+        "ca": "La plataforma avança 90°, es bloqueja i, mentre està quieta, un sensor llegeix el color de la peça.",
+    },
+    "abridor-fem": {
+        "es": "El modelo predecía la rotura a 91 N. En el ensayo aguantó 177 N.",
+        "en": "The model predicted failure at 91 N. In the test it held 177 N.",
+        "ca": "El model preveia el trencament a 91 N. A l'assaig va aguantar 177 N.",
+    },
+    "viga-impresa": {
+        "es": "Diseñada para soportar 250 N entre apoyos a 500 mm, con una flecha calculada de 13,8 mm.",
+        "en": "Designed to carry 250 N between supports 500 mm apart, with a calculated deflection of 13.8 mm.",
+        "ca": "Dissenyada per suportar 250 N entre suports a 500 mm, amb una fletxa calculada de 13,8 mm.",
+    },
+}
+# Cómo se compone cada proyecto destacado en la página de inicio.
+#   forma "a": vídeo o foto a la izquierda · "b": foto con una segunda imagen superpuesta · "c": foto a todo el ancho
+DESTACADOS = {
+    "clasificador-color": {"forma": "a", "video": "img/clasificador-color/funcionamiento-corto.mp4"},
+    "abridor-fem": {"forma": "b", "extra": "img/abridor-fem/fem-traccion.jpg",
+                    "extra_alt": {"es": "Tensiones principales de tracción del diseño final en ANSYS.",
+                                  "en": "Maximum principal (tensile) stress of the final design in ANSYS.",
+                                  "ca": "Tensions principals de tracció del disseny final a ANSYS."}},
+    "viga-impresa": {"forma": "c"},
+}

@@ -5,6 +5,7 @@
 SITE = {
     "nombre": "Raúl García Tavera",
     "linkedin": "https://www.linkedin.com/in/raulgarciatavera/",
+    "github": "https://github.com/raulgartav",
     "email": None,          # p. ej. "raulgarciatavera123@gmail.com" — pendiente de confirmar
     "cv": {                 # PDF del CV por idioma (ruta dentro de la web); None = no se muestra
         "es": None, "en": None, "ca": None,
@@ -27,6 +28,39 @@ T = {
         "en": "I am a fourth-year student at ETSEIB (UPC). I am interested in robotics, mechatronics and automation, and I want to work in an R&D department, a design team or a technical office. This site explains in detail the projects I have built at university and at home.",
         "ca": "Estudio quart curs a l'ETSEIB (UPC). M'interessen la robòtica, la mecatrònica i l'automatització, i vull treballar en un departament d'R+D, un equip de disseny o una oficina tècnica. Aquí explico amb detall els projectes que he fet a la carrera i a casa.",
     },
+    "intro_hero": {
+        "es": "Estudio cuarto curso en la ETSEIB (UPC). Me interesan la robótica, la mecatrónica y la automatización, y quiero trabajar en un departamento de I+D, un equipo de diseño o una oficina técnica.",
+        "en": "I am a fourth-year student at ETSEIB (UPC). I am interested in robotics, mechatronics and automation, and I want to work in an R&D department, a design team or a technical office.",
+        "ca": "Estudio quart curs a l'ETSEIB (UPC). M'interessen la robòtica, la mecatrònica i l'automatització, i vull treballar en un departament d'R+D, un equip de disseny o una oficina tècnica.",
+    },
+    "proy_intro": {
+        "es": "Cada proyecto explica el problema, las decisiones técnicas y el resultado, con fotos, simulaciones y datos de los ensayos.",
+        "en": "Each project explains the problem, the technical decisions and the result, with photos, simulations and test data.",
+        "ca": "Cada projecte explica el problema, les decisions tècniques i el resultat, amb fotos, simulacions i dades dels assaigs.",
+    },
+    "otros": {"es": "Otros proyectos", "en": "Other projects", "ca": "Altres projectes"},
+    "ver": {"es": "Ver el proyecto", "en": "View project", "ca": "Veure el projecte"},
+    "mec_pie": {
+        "es": "La Cruz de Malta de mi clasificador de colores, dibujada con su geometría real.",
+        "en": "The Geneva drive from my colour sorter, drawn from its real geometry.",
+        "ca": "La creu de Malta del meu classificador de colors, dibuixada amb la seva geometria real.",
+    },
+    "cert_t": {"es": "Certificación", "en": "Certification", "ca": "Certificació"},
+    "idiomas_t": {"es": "Idiomas", "en": "Languages", "ca": "Idiomes"},
+    "idiomas": {"es": "Inglés C1, español y catalán nativos", "en": "English C1, native Spanish and Catalan", "ca": "Anglès C1, castellà i català natius"},
+    "contacto_t": {
+        "es": "Busco prácticas a media jornada desde enero de 2027.",
+        "en": "I am looking for a part-time internship from January 2027.",
+        "ca": "Busco pràctiques a mitja jornada des de gener de 2027.",
+    },
+    "contacto_p": {
+        "es": "Si mi perfil encaja con tu equipo, escríbeme por LinkedIn.",
+        "en": "If my profile fits your team, message me on LinkedIn.",
+        "ca": "Si el meu perfil encaixa amb el teu equip, escriu-me per LinkedIn.",
+    },
+    "menu": {"es": "Menú", "en": "Menu", "ca": "Menú"},
+    "video_alt": {"es": "Vídeo del prototipo en funcionamiento", "en": "Video of the prototype running", "ca": "Vídeo del prototip en funcionament"},
+    "progreso": {"es": "Progreso de lectura", "en": "Reading progress", "ca": "Progrés de lectura"},
     "disp_t": {"es": "Disponibilidad", "en": "Availability", "ca": "Disponibilitat"},
     "disp": {
         "es": "Prácticas a media jornada desde enero de 2027",
@@ -128,5 +162,5 @@ SOBRE = {
     ],
 }
 
-from proyectos import PROYECTOS, ORDEN
+from proyectos import PROYECTOS, ORDEN, GANCHOS, DESTACADOS
 PROYECTOS.sort(key=lambda p: ORDEN.index(p["slug"]))

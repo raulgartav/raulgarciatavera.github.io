@@ -19,19 +19,21 @@
 <meta property="og:image" content="https://raulgartav.github.io/img/clasificador-color/maquina-funcionando.jpg">
 <meta property="og:locale" content="ca_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#f4f6f9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#f4f6f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0c1322" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231c3faa'/%3E%3Cpath d='M6 26V6h20v20z' fill='none' stroke='white' stroke-width='1.5'/%3E%3Ctext x='16' y='21' font-family='Arial' font-weight='700' font-size='12' fill='white' text-anchor='middle'%3ERG%3C/text%3E%3C/svg%3E">
-<link rel="preload" href="../../assets/fuentes/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../../assets/fuentes/plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%27-84%20-84%20168%20168%27%3E%3Cpath%20fill%3D%27%23d0282e%27%20d%3D%27M70.53%205.00%20A70.71%2070.71%200%200%201%2068.17%2018.77%20A52.00%2052.00%200%200%200%2018.77%2068.17%20A70.71%2070.71%200%200%201%205.00%2070.53%20L5.00%2029.29%20A5.00%205.00%200%200%200%20-5.00%2029.29%20L-5.00%2070.53%20A70.71%2070.71%200%200%201%20-18.77%2068.17%20A52.00%2052.00%200%200%200%20-68.17%2018.77%20A70.71%2070.71%200%200%201%20-70.53%205.00%20L-29.29%205.00%20A5.00%205.00%200%200%200%20-29.29%20-5.00%20L-70.53%20-5.00%20A70.71%2070.71%200%200%201%20-68.17%20-18.77%20A52.00%2052.00%200%200%200%20-18.77%20-68.17%20A70.71%2070.71%200%200%201%20-5.00%20-70.53%20L-5.00%20-29.29%20A5.00%205.00%200%200%200%205.00%20-29.29%20L5.00%20-70.53%20A70.71%2070.71%200%200%201%2018.77%20-68.17%20A52.00%2052.00%200%200%200%2068.17%20-18.77%20A70.71%2070.71%200%200%201%2070.53%20-5.00%20L29.29%20-5.00%20A5.00%205.00%200%200%200%2029.29%205.00%20L70.53%205.00Z%27/%3E%3C/svg%3E">
+<link rel="preload" href="../../assets/fuentes/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../assets/estilo.css">
+<script>document.documentElement.classList.add("js");window.TXT={"cerrar": "Tanca", "anterior": "Anterior", "posterior": "Següent", "pausa": "Pausa", "reproducir": "Reprodueix"}</script>
+<script src="../../assets/sitio.js" defer></script>
 </head>
 <body>
 <a class="saltar" href="#contenido">Salta al contingut</a>
 <header class="barra">
-  <div class="barra-in">
-    <a class="marca" href="../index.html" aria-label="Raúl García Tavera"><span class="marca-c" aria-hidden="true">RG</span><span class="marca-n">Raúl García Tavera</span></a>
-    <nav class="nav" aria-label="Contingut">
+  <div class="ancho barra-in">
+    <a class="marca" href="../index.html"><svg class="marca-i" viewBox="-72 -72 144 144" aria-hidden="true"><path d="M70.53 5.00 A70.71 70.71 0 0 1 68.17 18.77 A52.00 52.00 0 0 0 18.77 68.17 A70.71 70.71 0 0 1 5.00 70.53 L5.00 29.29 A5.00 5.00 0 0 0 -5.00 29.29 L-5.00 70.53 A70.71 70.71 0 0 1 -18.77 68.17 A52.00 52.00 0 0 0 -68.17 18.77 A70.71 70.71 0 0 1 -70.53 5.00 L-29.29 5.00 A5.00 5.00 0 0 0 -29.29 -5.00 L-70.53 -5.00 A70.71 70.71 0 0 1 -68.17 -18.77 A52.00 52.00 0 0 0 -18.77 -68.17 A70.71 70.71 0 0 1 -5.00 -70.53 L-5.00 -29.29 A5.00 5.00 0 0 0 5.00 -29.29 L5.00 -70.53 A70.71 70.71 0 0 1 18.77 -68.17 A52.00 52.00 0 0 0 68.17 -18.77 A70.71 70.71 0 0 1 70.53 -5.00 L29.29 -5.00 A5.00 5.00 0 0 0 29.29 5.00 L70.53 5.00Z"/></svg><span>Raúl García Tavera</span></a>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-controls="nav" hidden>Menú</button>
+    <nav class="nav" id="nav" aria-label="Contingut">
       <a href="../index.html#proyectos">Projectes</a>
       <a href="../index.html#sobre">Sobre mi</a>
       <a href="../index.html#contacto">Contacte</a>
@@ -39,41 +41,39 @@
     </nav>
   </div>
 </header>
-<main class="envoltura proy" id="contenido">
-  <a class="volver" href="../index.html#proyectos"><span aria-hidden="true">←</span> Tots els projectes</a>
-  <header class="proy-cab">
-    <div class="proy-tit">
-      <p class="eyebrow">REF. 01 · Projecte II · ETSEIB · equip de 4</p>
-      <h1>Classificador automàtic per colors amb creu de Malta</h1>
-      <p class="lema">Màquina que classifica peces per colors. Una cinta les porta a una plataforma que gira a passos exactes de 90° gràcies a una creu de Malta. A cada parada, un sensor llegeix el color i tres servomotors empenyen cada peça a la seva caixa.</p>
-    </div>
-    <dl class="cajetin">
+<div class="progreso" role="progressbar" aria-label="Progrés de lectura" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+<main class="proy" id="contenido">
+  <header class="ancho proy-cab">
+    <a class="volver" href="../index.html#proyectos"><svg class="ico ico-izq" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>Tots els projectes</a>
+    <p class="obra-meta">Projecte II · ETSEIB · equip de 4</p>
+    <h1>Classificador automàtic per colors amb creu de Malta</h1>
+    <p class="proy-lema">Màquina que classifica peces per colors. Una cinta les porta a una plataforma que gira a passos exactes de 90° gràcies a una creu de Malta. A cada parada, un sensor llegeix el color i tres servomotors empenyen cada peça a la seva caixa.</p>
+  </header>
+  <div class="ancho-g proy-portada" style="view-transition-name:foto-clasificador-color"><picture><source type="image/webp" srcset="../../img/clasificador-color/web/maquina-funcionando-640.webp 640w, ../../img/clasificador-color/web/maquina-funcionando-1100.webp 1100w, ../../img/clasificador-color/web/maquina-funcionando-1280.webp 1280w" sizes="(min-width: 1400px) 1320px, 96vw"><img src="../../img/clasificador-color/maquina-funcionando.jpg" width="1280" height="720" alt="Classificador automàtic per colors amb creu de Malta" fetchpriority="high" decoding="async"></picture></div>
+  <div class="ancho">
+    <dl class="ficha">
       <div><dt>Període</dt><dd>01/2026 – 05/2026</dd></div>
       <div><dt>El meu paper</dt><dd>Coordinador de l&#x27;equip</dd></div>
       <div><dt>Estat</dt><dd><span class="estado estado-acabado">Acabat</span></dd></div>
-      <div><dt>Eines</dt><dd><ul class="tags"><li>SOLIDWORKS</li><li>Arduino (C++)</li><li>Impressió 3D</li><li>Mecanismes</li></ul></dd></div>
+      <div class="ficha-herr"><dt>Eines</dt><dd><ul class="tags"><li>SOLIDWORKS</li><li>Arduino (C++)</li><li>Impressió 3D</li><li>Mecanismes</li></ul></dd></div>
     </dl>
-  </header>
-  <div class="portada portada-g con-foto"><img src="../../img/clasificador-color/maquina-funcionando.jpg" width="1280" height="720" alt="Classificador automàtic per colors amb creu de Malta" fetchpriority="high" decoding="async"></div>
-  <dl class="cifras"><div><dt>4 × 90°</dt><dd>estacions de la creu de Malta</dd></div><div><dt>3</dt><dd>colors classificats</dd></div><div><dt>0,2 mm</dt><dd>joc pivot–ranura</dd></div><div><dt>5</dt><dd>motors coordinats</dd></div></dl>
-  <div class="proy-cuerpo">
-    <nav class="proy-lat" aria-label="Contingut"><h2 class="mini">Contingut</h2><ol class="indice"><li><a href="#s1">El repte</a></li><li><a href="#s2">Com funciona</a></li><li><a href="#s3">Disseny i fabricació</a></li><li><a href="#s4">Control</a></li><li><a href="#s5">El meu paper</a></li></ol></nav>
-    <div class="proy-txt"><section class="psec" id="s1"><h2>El repte</h2><p>Coordinar una alimentació contínua (la cinta) amb una lectura de color que necessita la peça quieta i amb una classificació física posterior. La solució va ser un mecanisme clàssic: la creu de Malta converteix el gir continu del motor en avanços intermitents de 90°, i durant cada pausa la plataforma queda bloquejada mecànicament.</p><figure class="ginebra" data-ginebra='{"a": 100.0, "r": 70.71067811865474}' data-gira="Girant 90°" data-bloq="Bloquejada: el sensor llegeix el color">
+    <dl class="cifras rv"><div><dt>4 × 90°</dt><dd>estacions de la creu de Malta</dd></div><div><dt>3</dt><dd>colors classificats</dd></div><div><dt>0,2 mm</dt><dd>joc pivot–ranura</dd></div><div><dt>5</dt><dd>motors coordinats</dd></div></dl>
+    <div class="proy-cuerpo">
+      <nav class="proy-lat" aria-label="Contingut"><h2>Contingut</h2><ol class="indice"><li><a href="#s1">El repte</a></li><li><a href="#s2">Com funciona</a></li><li><a href="#s3">Disseny i fabricació</a></li><li><a href="#s4">Control</a></li><li><a href="#s5">El meu paper</a></li></ol></nav>
+      <div class="proy-txt"><section class="psec" id="s1"><h2 class="rv">El repte</h2><p class="rv">Coordinar una alimentació contínua (la cinta) amb una lectura de color que necessita la peça quieta i amb una classificació física posterior. La solució va ser un mecanisme clàssic: la creu de Malta converteix el gir continu del motor en avanços intermitents de 90°, i durant cada pausa la plataforma queda bloquejada mecànicament.</p><figure class="ginebra rv" data-ginebra='{"a": 100.0, "r": 70.71067811865474}' data-gira="Girant 90°" data-bloq="Bloquejada: el sensor llegeix el color">
   <div class="gin-lamina">
     <svg viewBox="-86 -96 280 192" role="img" aria-label="Animació d&#x27;un mecanisme de creu de Malta de quatre ranures">
-      <line class="gin-eje" x1="-84" y1="0" x2="192" y2="0"/>
-      <line class="gin-eje" x1="0" y1="-84" x2="0" y2="84"/>
-      <line class="gin-eje" x1="100" y1="-84" x2="100" y2="84"/>
+      <line class="gin-eje" x1="-78" y1="0" x2="180" y2="0"/>
+      <line class="gin-eje" x1="0" y1="-78" x2="0" y2="78"/>
+      <line class="gin-eje" x1="100" y1="-78" x2="100" y2="78"/>
       <circle class="gin-tray" cx="100" cy="0" r="70.71"/>
-      <g class="gin-cruz" transform="rotate(33.71)"><path d="M70.53 5.00 A70.71 70.71 0 0 1 68.17 18.77 A52.00 52.00 0 0 0 18.77 68.17 A70.71 70.71 0 0 1 5.00 70.53 L5.00 29.29 A5.00 5.00 0 0 0 -5.00 29.29 L-5.00 70.53 A70.71 70.71 0 0 1 -18.77 68.17 A52.00 52.00 0 0 0 -68.17 18.77 A70.71 70.71 0 0 1 -70.53 5.00 L-29.29 5.00 A5.00 5.00 0 0 0 -29.29 -5.00 L-70.53 -5.00 A70.71 70.71 0 0 1 -68.17 -18.77 A52.00 52.00 0 0 0 -18.77 -68.17 A70.71 70.71 0 0 1 -5.00 -70.53 L-5.00 -29.29 A5.00 5.00 0 0 0 5.00 -29.29 L5.00 -70.53 A70.71 70.71 0 0 1 18.77 -68.17 A52.00 52.00 0 0 0 68.17 -18.77 A70.71 70.71 0 0 1 70.53 -5.00 L29.29 -5.00 A5.00 5.00 0 0 0 29.29 5.00 L70.53 5.00Z"/><circle cx="24.04" cy="24.04" r="3.2" class="gin-m1"/><circle cx="-24.04" cy="24.04" r="3.2" class="gin-m"/><circle cx="-24.04" cy="-24.04" r="3.2" class="gin-m"/><circle cx="24.04" cy="-24.04" r="3.2" class="gin-m"/><circle class="gin-arbol" r="5"/></g>
+      <g class="gin-cruz" transform="rotate(33.71)"><path d="M70.53 5.00 A70.71 70.71 0 0 1 68.17 18.77 A52.00 52.00 0 0 0 18.77 68.17 A70.71 70.71 0 0 1 5.00 70.53 L5.00 29.29 A5.00 5.00 0 0 0 -5.00 29.29 L-5.00 70.53 A70.71 70.71 0 0 1 -18.77 68.17 A52.00 52.00 0 0 0 -68.17 18.77 A70.71 70.71 0 0 1 -70.53 5.00 L-29.29 5.00 A5.00 5.00 0 0 0 -29.29 -5.00 L-70.53 -5.00 A70.71 70.71 0 0 1 -68.17 -18.77 A52.00 52.00 0 0 0 -18.77 -68.17 A70.71 70.71 0 0 1 -5.00 -70.53 L-5.00 -29.29 A5.00 5.00 0 0 0 5.00 -29.29 L5.00 -70.53 A70.71 70.71 0 0 1 18.77 -68.17 A52.00 52.00 0 0 0 68.17 -18.77 A70.71 70.71 0 0 1 70.53 -5.00 L29.29 -5.00 A5.00 5.00 0 0 0 29.29 5.00 L70.53 5.00Z"/><circle class="gin-m" cx="24.04" cy="24.04" r="3.4"/><circle class="gin-arbol" r="5"/></g>
       <g class="gin-motriz" transform="translate(100 0) rotate(162.00)">
         <path class="gin-disco" d="M36.47 35.36 L34.31 37.46 L32.03 39.43 L29.64 41.26 L27.14 42.94 L24.55 44.48 L21.87 45.85 L19.11 47.07 L16.29 48.12 L13.41 49.00 L10.48 49.71 L7.52 50.24 L4.53 50.60 L1.52 50.78 L-1.49 50.78 L-4.49 50.60 L-7.48 50.25 L-10.45 49.71 L-13.38 49.01 L-16.26 48.13 L-19.08 47.08 L-21.84 45.87 L-24.51 44.49 L-27.11 42.96 L-29.61 41.28 L-32.00 39.45 L-34.28 37.49 L-36.44 35.39 L-38.48 33.17 L-40.37 30.83 L-42.13 28.39 L-43.74 25.84 L-45.19 23.20 L-46.49 20.48 L-47.62 17.69 L-48.58 14.84 L-49.38 11.93 L-50.00 8.99 L-50.44 6.01 L-50.71 3.01 L-50.80 0.00 L-50.71 -3.01 L-50.44 -6.01 L-50.00 -8.99 L-49.38 -11.93 L-48.58 -14.84 L-47.62 -17.69 L-46.49 -20.48 L-45.19 -23.20 L-43.74 -25.84 L-42.13 -28.39 L-40.37 -30.83 L-38.48 -33.17 L-36.44 -35.39 L-34.28 -37.49 L-32.00 -39.45 L-29.61 -41.28 L-27.11 -42.96 L-24.51 -44.49 L-21.84 -45.87 L-19.08 -47.08 L-16.26 -48.13 L-13.38 -49.01 L-10.45 -49.71 L-7.48 -50.25 L-4.49 -50.60 L-1.49 -50.78 L1.52 -50.78 L4.53 -50.60 L7.52 -50.24 L10.48 -49.71 L13.41 -49.00 L16.29 -48.12 L19.11 -47.07 L21.87 -45.85 L24.55 -44.48 L27.14 -42.94 L29.64 -41.26 L32.03 -39.43 L34.31 -37.46 L36.47 -35.36 L36.47 -35.36 L35.59 -33.74 L34.76 -32.09 L33.96 -30.43 L33.21 -28.74 L32.50 -27.03 L31.84 -25.31 L31.22 -23.57 L30.64 -21.82 L30.11 -20.05 L29.62 -18.27 L29.18 -16.48 L28.78 -14.67 L28.44 -12.86 L28.13 -11.04 L27.87 -9.21 L27.66 -7.37 L27.50 -5.53 L27.38 -3.69 L27.31 -1.85 L27.29 0.00 L27.31 1.85 L27.38 3.69 L27.50 5.53 L27.66 7.37 L27.87 9.21 L28.13 11.04 L28.44 12.86 L28.78 14.67 L29.18 16.48 L29.62 18.27 L30.11 20.05 L30.64 21.82 L31.22 23.57 L31.84 25.31 L32.50 27.03 L33.21 28.74 L33.96 30.43 L34.76 32.09 L35.59 33.74 L36.47 35.36Z"/>
         <line class="gin-brazo" x1="0" y1="0" x2="70.71" y2="0"/>
         <circle class="gin-pivote" cx="70.71" cy="0" r="4.2"/>
         <circle class="gin-arbol" r="5"/>
-      </g>
-      <text class="gin-rot" x="0" y="-86" text-anchor="middle">Creu de Malta</text>
-      <text class="gin-rot" x="100" y="-86" text-anchor="middle">Roda motriu</text>
+      </g><text class="gin-rot" x="0" y="-84" text-anchor="middle">Creu de Malta</text><text class="gin-rot" x="100" y="-84" text-anchor="middle">Roda motriu</text>
     </svg>
   </div>
   <div class="gin-panel">
@@ -82,21 +82,23 @@
     <button type="button" class="gin-btn" hidden>Pausa</button>
   </div>
   <figcaption>El mecanisme, dibuixat a partir de la seva geometria. La roda motriu gira de manera contínua; el seu pivot entra en una ranura, arrossega la creu 90° i surt. La resta de la volta, el disc de bloqueig impedeix que la creu es mogui. Una volta del motor: ¼ de gir, ¾ de bloqueig.</figcaption>
-</figure></section><section class="psec" id="s2"><h2>Com funciona</h2><ul class="guiones"><li>Una cinta transportadora, amb un motor de corrent continu amb reductora i peces LEGO, deixa cada peça a l&#x27;estació de lectura.</li><li>El sensor TCS3200 llegeix el color dins d&#x27;una carcassa opaca que l&#x27;aïlla de la llum ambient.</li><li>Un motor pas a pas (driver A3967) mou la roda motriu. Cada volta fa girar la plataforma 90°, i durant els 270° restants la manté bloquejada.</li><li>L&#x27;Arduino desa el color de la peça que hi ha a cada estació i activa el servo HS-422 de l&#x27;estació que li correspon.</li><li>Una pantalla LCD mostra el color detectat i el recompte per colors. Hi ha un polsador de marxa/paro i una parada d&#x27;emergència.</li></ul><div class="fila-figs n1" style="max-width:1536px"><figure class="fig fig-video" style="flex:1.7778 1 0%"><video controls preload="none" playsinline width="1280" height="720" poster="../../img/clasificador-color/maquina-funcionando.jpg"><source src="../../img/clasificador-color/funcionamiento.mp4" type="video/mp4"></video><figcaption>El prototip classificant peces al laboratori.</figcaption></figure></div></section><section class="psec" id="s3"><h2>Disseny i fabricació</h2><p>Totes les peces pròpies es van modelar de manera paramètrica en SOLIDWORKS amb criteris de disseny per a fabricació i es van imprimir en PLA. Entre el pivot i les ranures de la creu es va deixar un joc de 0,2 mm perquè l&#x27;encaix fos suau. Abans d&#x27;imprimir, vam comprovar el muntatge amb detecció d&#x27;interferències i un estudi de moviment, perquè els braços dels servos no xoquessin amb el suport del sensor.</p><div class="fila-figs n1" style="max-width:1920px"><figure class="fig" style="flex:2.6316 1 0%"><a href="../../img/clasificador-color/ensamblaje-cad.jpg" data-visor aria-label="Amplia la imatge: Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes."><img src="../../img/clasificador-color/ensamblaje-cad.jpg" width="1600" height="608" alt="Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes." loading="lazy" decoding="async"></a><figcaption>Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes.</figcaption></figure></div><div class="fila-figs n1" style="max-width:1536px"><figure class="fig fig-video" style="flex:1.7778 1 0%"><video controls preload="none" playsinline width="1280" height="720" poster="../../img/clasificador-color/simulacion-solidworks.jpg"><source src="../../img/clasificador-color/simulacion-solidworks.mp4" type="video/mp4"></video><figcaption>Estudi de moviment en SOLIDWORKS per comprovar la sincronització.</figcaption></figure></div></section><section class="psec" id="s4"><h2>Control</h2><p>El programa en C++ sincronitza tres coses: la lectura del sensor, el gir de la plataforma i l&#x27;accionament dels servos. Perquè cap tasca bloquegi les altres, l&#x27;avanç del motor pas a pas es temporitza amb millis() en lloc de pauses fixes. Abans de cada ús es calibra el sensor amb peces de referència de cada color.</p><div class="fila-figs n1" style="max-width:1920px"><figure class="fig" style="flex:3.0769 1 0%"><a href="../../img/clasificador-color/diagrama-flujo.jpg" data-visor aria-label="Amplia la imatge: Diagrama de flux del programa de control."><img src="../../img/clasificador-color/diagrama-flujo.jpg" width="1600" height="520" alt="Diagrama de flux del programa de control." loading="lazy" decoding="async"></a><figcaption>Diagrama de flux del programa de control.</figcaption></figure></div></section><section class="psec" id="s5"><h2>El meu paper</h2><p>Vaig coordinar l&#x27;equip de quatre persones durant tot el projecte, des de la proposta fins al prototip final i el pòster.</p></section></div>
+</figure></section><section class="psec" id="s2"><h2 class="rv">Com funciona</h2><ul class="guiones rv"><li>Una cinta transportadora, amb un motor de corrent continu amb reductora i peces LEGO, deixa cada peça a l&#x27;estació de lectura.</li><li>El sensor TCS3200 llegeix el color dins d&#x27;una carcassa opaca que l&#x27;aïlla de la llum ambient.</li><li>Un motor pas a pas (driver A3967) mou la roda motriu. Cada volta fa girar la plataforma 90°, i durant els 270° restants la manté bloquejada.</li><li>L&#x27;Arduino desa el color de la peça que hi ha a cada estació i activa el servo HS-422 de l&#x27;estació que li correspon.</li><li>Una pantalla LCD mostra el color detectat i el recompte per colors. Hi ha un polsador de marxa/paro i una parada d&#x27;emergència.</li></ul><div class="fila-figs n1 rv" style="max-width:1536px"><figure class="fig fig-video" style="flex:1.7778 1 0%"><video controls preload="none" playsinline width="1280" height="720" poster="../../img/clasificador-color/maquina-funcionando.jpg"><source src="../../img/clasificador-color/funcionamiento.mp4" type="video/mp4"></video><figcaption>El prototip classificant peces al laboratori.</figcaption></figure></div></section><section class="psec" id="s3"><h2 class="rv">Disseny i fabricació</h2><p class="rv">Totes les peces pròpies es van modelar de manera paramètrica en SOLIDWORKS amb criteris de disseny per a fabricació i es van imprimir en PLA. Entre el pivot i les ranures de la creu es va deixar un joc de 0,2 mm perquè l&#x27;encaix fos suau. Abans d&#x27;imprimir, vam comprovar el muntatge amb detecció d&#x27;interferències i un estudi de moviment, perquè els braços dels servos no xoquessin amb el suport del sensor.</p><div class="fila-figs n1 rv" style="max-width:1920px"><figure class="fig" style="flex:2.6316 1 0%"><a href="../../img/clasificador-color/ensamblaje-cad.jpg" data-visor aria-label="Amplia la imatge: Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes."><picture><source type="image/webp" srcset="../../img/clasificador-color/web/ensamblaje-cad-640.webp 640w, ../../img/clasificador-color/web/ensamblaje-cad-1100.webp 1100w, ../../img/clasificador-color/web/ensamblaje-cad-1600.webp 1600w" sizes="(min-width: 1100px) 780px, 92vw"><img src="../../img/clasificador-color/ensamblaje-cad.jpg" width="1600" height="608" alt="Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes." loading="lazy" decoding="async"></picture></a><figcaption>Muntatge general en SOLIDWORKS: cinta, creu de Malta, plataforma, servos i caixes.</figcaption></figure></div><div class="fila-figs n1 rv" style="max-width:1536px"><figure class="fig fig-video" style="flex:1.7778 1 0%"><video controls preload="none" playsinline width="1280" height="720" poster="../../img/clasificador-color/simulacion-solidworks.jpg"><source src="../../img/clasificador-color/simulacion-solidworks.mp4" type="video/mp4"></video><figcaption>Estudi de moviment en SOLIDWORKS per comprovar la sincronització.</figcaption></figure></div></section><section class="psec" id="s4"><h2 class="rv">Control</h2><p class="rv">El programa en C++ sincronitza tres coses: la lectura del sensor, el gir de la plataforma i l&#x27;accionament dels servos. Perquè cap tasca bloquegi les altres, l&#x27;avanç del motor pas a pas es temporitza amb millis() en lloc de pauses fixes. Abans de cada ús es calibra el sensor amb peces de referència de cada color.</p><div class="fila-figs n1 rv" style="max-width:1920px"><figure class="fig" style="flex:3.0769 1 0%"><a href="../../img/clasificador-color/diagrama-flujo.jpg" data-visor aria-label="Amplia la imatge: Diagrama de flux del programa de control."><picture><source type="image/webp" srcset="../../img/clasificador-color/web/diagrama-flujo-640.webp 640w, ../../img/clasificador-color/web/diagrama-flujo-1100.webp 1100w, ../../img/clasificador-color/web/diagrama-flujo-1600.webp 1600w" sizes="(min-width: 1100px) 780px, 92vw"><img src="../../img/clasificador-color/diagrama-flujo.jpg" width="1600" height="520" alt="Diagrama de flux del programa de control." loading="lazy" decoding="async"></picture></a><figcaption>Diagrama de flux del programa de control.</figcaption></figure></div></section><section class="psec" id="s5"><h2 class="rv">El meu paper</h2><p class="rv">Vaig coordinar l&#x27;equip de quatre persones durant tot el projecte, des de la proposta fins al prototip final i el pòster.</p></section></div>
+    </div>
+    
   </div>
-  
   <a class="siguiente" href="abridor-fem.html">
-    <span class="mini">Següent projecte · REF. 02</span>
-    <span class="sig-t">Obridor d&#x27;ampolles optimitzat amb elements finits <span aria-hidden="true">→</span></span>
+    <span class="ancho siguiente-in">
+      <span class="siguiente-k">Següent projecte</span>
+      <span class="siguiente-t">Obridor d&#x27;ampolles optimitzat amb elements finits<svg class="ico ico-der" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </span>
   </a>
 </main>
 <footer class="pie">
-  <div class="envoltura pie-in">
+  <div class="ancho pie-in">
     <span>© 2026 Raúl García Tavera</span>
     <span>S&#x27;actualitza amb cada projecte nou.</span>
+    <span class="pie-enl"><a href="https://www.linkedin.com/in/raulgarciatavera/" rel="me">LinkedIn</a><a href="https://github.com/raulgartav" rel="me">GitHub</a></span>
   </div>
 </footer>
-<script>window.TXT={"cerrar": "Tanca", "anterior": "Anterior", "posterior": "Següent", "pausa": "Pausa", "reproducir": "Reprodueix"}</script>
-<script src="../../assets/sitio.js" defer></script>
 </body>
 </html>
