@@ -441,7 +441,7 @@ def obra(p, l, ruta):
     if d.get("extra"):
         media += f'<div class="obra-extra">{pic(d["extra"], tx(d["extra_alt"], l), ruta, "(min-width: 1000px) 300px, 40vw")}</div>'
     estado = chip_estado(p, l) if p["estado"] == "en_curso" else ""
-    datos = cifras(p, l, "obra-cifras", 3) or f'<ul class="tags obra-tags">{etiquetas(p, l)}</ul>'
+    datos = f'<ul class="tags obra-tags">{etiquetas(p, l)}</ul>'   # en la portada, sin cifras: repetían la frase del proyecto
     return f"""<article class="obra obra-{d['forma']}">
     <div class="obra-media rv-foto">{media}</div>
     <div class="obra-txt rv">
