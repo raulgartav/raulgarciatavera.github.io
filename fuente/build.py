@@ -16,8 +16,8 @@ PROY_DIR = {"es": "proyectos", "en": "projects", "ca": "projectes"}
 LANG_NAME = {"es": "ES", "en": "EN", "ca": "CA"}
 OG_LOCALE = {"es": "es_ES", "en": "en_GB", "ca": "ca_ES"}
 # Dirección pública de la web. Cambiar aquí si cambia el usuario o el dominio.
-SITE_URL = "https://raulgartav.github.io/raulgarciatavera.github.io/"
-BASE_PATH = urlparse(SITE_URL).path          # "/raulgarciatavera.github.io/"
+SITE_URL = "https://raulgartav.github.io/"
+BASE_PATH = urlparse(SITE_URL).path          # "/"
 OG_IMG = "assets/og.png"
 
 e = html.escape
